@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" fill="none">
+  <rect width="1920" height="1080" fill="url(#grad)"/>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1920" y2="1080">
+      <stop offset="0%" stop-color="#0a1f44"/>
+      <stop offset="50%" stop-color="#1a3a6a"/>
+      <stop offset="100%" stop-color="#0d2550"/>
+    </linearGradient>
+  </defs>
+  <!-- Power tower silhouette -->
+  <g fill="#1a3a6a" opacity="0.3">
+    <rect x="900" y="200" width="120" height="800" rx="4"/>
+    <rect x="850" y="250" width="220" height="8" rx="2"/>
+    <rect x="870" y="350" width="180" height="8" rx="2"/>
+    <rect x="890" y="450" width="140" height="8" rx="2"/>
+    <rect x="910" y="550" width="100" height="8" rx="2"/>
+    <!-- Cross bars -->
+    <rect x="800" y="280" width="320" height="6" rx="2"/>
+    <rect x="830" y="380" width="260" height="6" rx="2"/>
+    <rect x="860" y="480" width="200" height="6" rx="2"/>
+    <!-- Diagonal supports -->
+    <line x1="850" y1="280" x2="960" y2="380" stroke="#1a3a6a" stroke-width="4" opacity="0.3"/>
+    <line x1="1070" y1="280" x2="960" y2="380" stroke="#1a3a6a" stroke-width="4" opacity="0.3"/>
+  </g>
+</svg>
