@@ -10,17 +10,17 @@ const navLinks = [
   {
     label: "PRODUCTS",
     children: [
-      { to: "/products/eye-bolts", label: "Eye Bolts & Eye Nuts" },
-      { to: "/products/pole-line", label: "Pole Line Hardware" },
-      { to: "/products/suspension-clamps", label: "Suspension Clamps" },
-      { to: "/products/tension-clamps", label: "Tension Clamps" },
-      { to: "/products/insulators", label: "Insulators" },
+      { to: "/products", label: "Open Web Girders" },
+      { to: "/products", label: "Composite Girders" },
+      { to: "/products", label: "Bow String Bridges" },
+      { to: "/products", label: "Railway ROB" },
+      { to: "/products", label: "Foot Over Bridge (FOB)" },
+      { to: "/products", label: "Heavy Metal Fabrication" },
       { to: "/products", label: "View All Products" },
     ],
   },
-  { to: "/quality", label: "QUALITY" },
-  { to: "/downloads", label: "DOWNLOADS" },
-  { to: "/careers", label: "CAREERS" },
+  { to: "/why-us", label: "WHY US" },
+  { to: "/projects", label: "PROJECTS" },
   { to: "/contact", label: "CONTACT US" },
 ];
 
@@ -83,7 +83,7 @@ export default function Header() {
               >
                 {link.label}
               </Link>
-            )
+            ),
           )}
         </nav>
 
@@ -98,7 +98,11 @@ export default function Header() {
           className="lg:hidden text-navy p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
@@ -112,7 +116,7 @@ export default function Header() {
                   className="flex items-center justify-between w-full px-3 py-2 text-sm font-semibold text-navy hover:text-accent"
                   onClick={() =>
                     setActiveDropdown(
-                      activeDropdown === link.label ? null : link.label
+                      activeDropdown === link.label ? null : link.label,
                     )
                   }
                 >
@@ -151,7 +155,7 @@ export default function Header() {
               >
                 {link.label}
               </Link>
-            )
+            ),
           )}
           <Button className="w-full bg-accent hover:brightness-110 text-white font-semibold mt-4">
             GET A QUOTE

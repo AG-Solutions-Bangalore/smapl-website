@@ -1,30 +1,25 @@
 import { ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
 
-export default function QualityHero() {
+export default function ProjectsHero() {
   return (
     <section className="relative bg-navy-dark overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=1399&auto=format&fit=crop)`,
+          backgroundImage: "url('/images/about/about-hero.jpeg')",
+        }}}
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/40" />
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
         <div className="max-w-xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            QUALITY &
-            <br />
-            CERTIFICATIONS
+            OUR PROJECTS
           </h1>
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            Committed to delivering superior quality
-            <br />
-            products that ensure safety, reliability
-            <br />
-            and long-term performance.
+            Showcasing our precision fabrication and erection of railroad bridges, flyovers, and infrastructure projects across India.
           </p>
 
           <nav className="flex items-center gap-2 text-sm text-gray-400">
@@ -33,7 +28,7 @@ export default function QualityHero() {
               Home
             </Link>
             <ChevronRight className="w-4 h-4" />
-            <span className="text-white">Quality & Certifications</span>
+            <span className="text-white">Projects</span>
           </nav>
         </div>
       </div>

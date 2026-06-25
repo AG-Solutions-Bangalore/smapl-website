@@ -7,7 +7,7 @@ export default function ProductsHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1615811361523-6bd03d7748e7?q=80&w=1399&auto=format&fit=crop)`,
+          backgroundImage: "url('/images/about/about-hero.jpeg')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
@@ -18,11 +18,11 @@ export default function ProductsHero() {
             OUR PRODUCTS
           </h1>
           <p className="text-gray-300 text-lg mb-8 leading-relaxed">
-            High quality power line hardware and pole line
+            High-quality steel bridge girders and heavy structural steel
             <br />
-            hardware engineered for safety, reliability
+            fabrication engineered for safety, reliability, and
             <br />
-            and long-lasting performance.
+            long-lasting performance.
           </p>
 
           <nav className="flex items-center gap-2 text-sm text-gray-400">

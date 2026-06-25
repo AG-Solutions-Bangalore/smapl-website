@@ -1,10 +1,15 @@
 import { CheckCircle2 } from "lucide-react";
 
 const highlights = [
-  "30+ Years of Experience",
-  "Advanced Manufacturing Facility",
-  "Quality & Customer Satisfaction",
-  "Wide Range of Products",
+  "ISO 9001:2015 Certified Quality Management System",
+  "Production capacity of 18,000 Tons per Year",
+  "Factory in Gowribidanur with 20-ton and 10-Ton EOT cranes",
+  "MOU with NABL-accredited KVS Metallurgical Labs",
+  "Power: 350 KVA Demand, 500 KVA Installed, 250 KVA DG Backup",
+  "Highly dedicated and committed workforce with latest equipment",
+  "Aim for continuous improvement by adopting new practices",
+  "Vision of growth and shared learning",
+  "RDSO Approved for fabrication of Open Web, Composite & Steel Plate Girders",
 ];
 
 export default function WhoWeAre() {
@@ -17,36 +22,57 @@ export default function WhoWeAre() {
               WHO WE ARE
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-navy leading-tight mb-6">
-              Leading Manufacturer & Supplier of
-              <br />
-              Power Line Hardware
+              Leading Manufacturer & Supplier <br /> of Steel Girders
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-8">
-              Sai Moulded Appliances Pvt. Ltd. (SMAPL) established in 1994, is a
-              leading manufacturer and supplier of Power Line Hardware & Pole Line
-              Hardware. With modern infrastructure, skilled workforce and
-              commitment to quality, we deliver products that ensure safety,
-              durability and reliability in every connection.
-            </p>
-
-            <div className="space-y-4">
-              {highlights.map((item) => (
-                <div key={item} className="flex items-center gap-3">
-                  <CheckCircle2 className="w-5 h-5 bg-accent text-white shrink-0 rounded-full" />
-                  <span className="text-navy font-medium">{item}</span>
-                </div>
-              ))}
+            <div className="text-muted-foreground leading-relaxed space-y-4">
+              <p>
+                <strong>Sulit Metals & Alloys Private Ltd. (SMAPL)</strong> is a
+                leading manufacturer and supplier of steel girders, located in
+                Karnataka, India.
+              </p>
+              <p>
+                Incorporated on <strong>20th November 2019</strong> under the
+                Companies Act, 2013, SMAPL undertakes contracts for fabrication,
+                erection and commissioning of Bridges and Girders for Indian
+                Railways and infrastructure projects across India. Our directors
+                —{" "}
+                <strong>
+                  Abhishek Agarwal, Mukesh Tibrewal & Avinash Agarwal
+                </strong>{" "}
+                — bring deep expertise in Iron and Steel.
+              </p>
+              <p>
+                The name <em>SULIT</em> means <strong>"Value for Money"</strong>{" "}
+                — a principle we uphold in every project we deliver.
+              </p>
             </div>
           </div>
 
           <div className="relative">
             <div className="rounded-2xl overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1399&auto=format&fit=crop"
+                src="./images/about/about_us.webp"
                 alt="SMAPL Manufacturing Facility"
                 className="w-full h-auto object-cover"
               />
             </div>
+          </div>
+        </div>
+
+        {/* Two-column Points Sub-section */}
+        <div className="mt-16 pt-12 border-t border-slate-100">
+          <h3 className="text-lg font-bold text-navy mb-6 uppercase tracking-wider">
+            Our Strengths
+          </h3>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+            {highlights.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 bg-accent text-white shrink-0 rounded-full mt-0.5" />
+                <span className="text-navy font-medium text-sm md:text-base leading-relaxed">
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
