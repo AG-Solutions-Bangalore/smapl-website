@@ -21,8 +21,8 @@ const features = [
   },
   {
     icon: Award,
-    title: "25+ Years Experience",
-    description: "Decades of expertise in power line and pole line hardware.",
+    title: "RDSO Approved",
+    description: "RDSO Approved for fabrication of open web, composite & steel plate girders.",
   },
 ];
 

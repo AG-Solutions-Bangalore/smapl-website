@@ -37,9 +37,16 @@ export const router = createBrowserRouter([
         },
       },
       {
-        path: "quality",
+        path: "why-us",
         lazy: async () => {
-          const { default: Component } = await import("@/modules/quality/pages/QualityPage");
+          const { default: Component } = await import("@/modules/whyUS/pages/QualityPage");
+          return { Component };
+        },
+      },
+      {
+        path: "projects",
+        lazy: async () => {
+          const { default: Component } = await import("@/modules/projects/pages/ProjectsPage");
           return { Component };
         },
       },

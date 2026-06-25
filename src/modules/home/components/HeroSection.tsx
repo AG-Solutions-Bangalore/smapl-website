@@ -1,36 +1,40 @@
 import diamondProduct from "@/assets/images/diamond-product.svg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Download } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden bg-navy-dark">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1662958656945-746c5758f62d?q=80&w=1399&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)`,
+          backgroundImage: "url('/images/home/banner.webp')",
         }}
       />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy-dark/75 to-navy-dark/30" />
 
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-32 md:pt-28 md:pb-44 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="text-white space-y-6">
             <p className="text-accent font-medium tracking-wide">
-              Powering Connections. Empowering Tomorrow.
+              Delivering Strength. Building Trust.
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              Quality Products Built for Safety & Reliability
+              Quality Steel Girders Built for Strength & Safety
             </h1>
             <p className="text-lg text-gray-300 max-w-lg">
-              Manufacturer & Supplier of premium quality Power Line Hardware &
-              Pole Line Hardware for a stronger tomorrow.
+              Leading manufacturer and supplier of steel girders, bridges, and
+              heavy infrastructure projects across India.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button className="bg-accent hover:bg-accent/90 hover:brightness-110  rounded-md text-white font-semibold px-8 py-5 text-base">
-                EXPLORE PRODUCTS
-                <ArrowRight className="w-5 h-5" />
-              </Button>
+              <Link to="/products">
+                <Button className="bg-accent hover:bg-accent/90 hover:brightness-110  rounded-md text-white font-semibold px-8 py-5 text-base">
+                  EXPLORE PRODUCTS
+                  <ArrowRight className="w-5 h-5" />
+                </Button>
+              </Link>
               <Button className="text-black hover:bg-gray-200 bg-white rounded-md font-semibold px-8 py-5 text-base">
                 DOWNLOAD CATALOG
                 <Download className="w-5 h-5" />

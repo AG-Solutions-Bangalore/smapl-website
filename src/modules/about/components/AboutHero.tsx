@@ -7,7 +7,7 @@ export default function AboutHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1399&auto=format&fit=crop)`,
+          backgroundImage: "url('/images/about/about-hero.jpeg')",
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/40" />
@@ -25,7 +25,10 @@ export default function AboutHero() {
           </p>
 
           <nav className="flex items-center gap-2 text-sm text-gray-400">
-            <Link to="/" className="flex items-center gap-1 hover:text-white transition-colors">
+            <Link
+              to="/"
+              className="flex items-center gap-1 hover:text-white transition-colors"
+            >
               <Home className="w-4 h-4" />
               Home
             </Link>
