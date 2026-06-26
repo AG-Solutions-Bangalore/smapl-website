@@ -8,7 +8,6 @@ export default function QualityHero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/about/about-hero.jpeg')",
-        }}}
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />

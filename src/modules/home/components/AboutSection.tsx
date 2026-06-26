@@ -1,31 +1,31 @@
+import StatsBar from "@/components/common/StatsBar";
+// import { Award, Building2, Package, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Building2, Award, Package, Users, CheckCircle2 } from "lucide-react";
 
-const stats = [
-  { icon: Building2, value: "2019", label: "Established" },
-  { icon: Award, value: "18,000", label: "Tons/Year Capacity" },
-  { icon: Package, value: "500 KVA", label: "Installed Power" },
-  { icon: Users, value: "RDSO", label: "Approved Quality" },
-];
+// const stats = [
+//   { icon: Building2, value: "2019", label: "Established" },
+//   { icon: Award, value: "18,000", label: "Tons/Year Capacity" },
+//   { icon: Package, value: "500 KVA", label: "Installed Power" },
+//   { icon: Users, value: "RDSO", label: "Approved Quality" },
+// ];
 
-const highlights = [
-
-  "ISO 9001:2015 Certified Quality Management System",
-  "Production capacity of 18,000 Tons per Year",
-  "Factory in Gowribidanur with 20-ton and 10-Ton EOT cranes",
-  "MOU with NABL-accredited KVS Metallurgical Labs",
-  "Power: 350 KVA Demand, 500 KVA Installed, 250 KVA DG Backup",
-  "Highly dedicated and committed workforce with latest equipment",
-  "Aim for continuous improvement by adopting new practices",
-  "Vision of growth and shared learning",
-    "RDSO Approved for fabrication of Open Web, Composite & Steel Plate Girders",
-];
+// const highlights = [
+//   "ISO 9001:2015 Certified Quality Management System",
+//   "Production capacity of 18,000 Tons per Year",
+//   "Factory in Gowribidanur with 20-ton and 10-Ton EOT cranes",
+//   "MOU with NABL-accredited KVS Metallurgical Labs",
+//   "Power: 350 KVA Demand, 500 KVA Installed, 250 KVA DG Backup",
+//   "Highly dedicated and committed workforce with latest equipment",
+//   "Aim for continuous improvement by adopting new practices",
+//   "Vision of growth and shared learning",
+//   "RDSO Approved for fabrication of Open Web, Composite & Steel Plate Girders",
+// ];
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid pb-10 lg:grid-cols-2 gap-12 items-center">
           {/* Factory Image */}
           <div className="relative rounded-2xl overflow-hidden">
             <img
@@ -71,7 +71,7 @@ export default function AboutSection() {
         </div>
 
         {/* Two-column Points Sub-section */}
-        <div className="mt-16 pt-12 border-t border-slate-100">
+        {/* <div className="mt-16 pt-12 border-t border-slate-100">
           <h3 className="text-lg font-bold text-navy mb-6 uppercase tracking-wider">
             Our Strengths
           </h3>
@@ -85,29 +85,10 @@ export default function AboutSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-slate-100">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
-            >
-              <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
-                <stat.icon className="w-6 h-6 text-navy" />
-              </div>
-              <div>
-                <div className="text-xl md:text-2xl font-bold text-navy">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <StatsBar />
       </div>
     </section>
   );

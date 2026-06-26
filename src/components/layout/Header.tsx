@@ -32,8 +32,12 @@ export default function Header() {
   return (
     <header className="bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="SMAPL Logo" className="h-12" />
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="SMAPL Logo" className="h-10 md:h-12" />
+          <div className="flex flex-col">
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Sulit Metals &</span>
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Alloys Private Ltd.</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}

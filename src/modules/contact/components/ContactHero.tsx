@@ -8,10 +8,9 @@ export default function ContactHero() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/about/about-hero.jpeg')",
-        }}}
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
         <div className="max-w-xl">

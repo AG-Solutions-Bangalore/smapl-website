@@ -29,14 +29,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img
-              src={logo}
-              alt="SMAPL Logo"
-              className="h-14 brightness-0 invert"
-            />
+            <div className="flex flex-col mb-4">
+              <img
+                src={logo}
+                alt="SMAPL Logo"
+                className="h-14 brightness-0 invert w-fit mb-3"
+              />
+              <div className="flex flex-col">
+                <span className="text-lg font-bold text-white leading-tight tracking-wide">Sulit Metals &</span>
+                <span className="text-lg font-bold text-white leading-tight tracking-wide">Alloys Private Ltd.</span>
+              </div>
+            </div>
             <p className="text-sm text-gray-300 leading-relaxed">
               Manufacturer & Supplier of Structural Steel Products & Heavy Metal
-              Fabrication committed to quality, safety and customer satisfaction.
+              Fabrication committed to quality, safety and customer
+              satisfaction.
             </p>
             <div className="flex gap-3">
               <a
@@ -155,9 +162,7 @@ export default function Footer() {
       {/* Copyright */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between text-sm text-gray-400">
-          <p>
-            &copy; 2024 Sai Moulded Appliances Pvt. Ltd. All Rights Reserved.
-          </p>
+          <p>&copy; 2024 SMAPL Pvt. Ltd. All Rights Reserved.</p>
           <p>
             Designed by{" "}
             <a

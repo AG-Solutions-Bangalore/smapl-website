@@ -53,7 +53,7 @@ export default function ProductsSection() {
         <div className="flex items-end justify-between mb-10">
           <div>
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
-              OUR PRODUCTS
+              OUR PRODUCTS AND SERVICES
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-navy">
               Premium Steel Bridge Girders & Structures
