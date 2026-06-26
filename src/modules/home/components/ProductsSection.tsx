@@ -1,5 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const products = [
   {
@@ -50,10 +52,10 @@ export default function ProductsSection() {
   return (
     <section className="py-20 mt-6 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-10">
+        <ScrollReveal direction="up" className="flex items-end justify-between mb-10">
           <div>
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
-              OUR PRODUCTS
+              OUR PRODUCTS AND SERVICES
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-navy">
               Premium Steel Bridge Girders & Structures
@@ -66,12 +68,15 @@ export default function ProductsSection() {
           >
             VIEW ALL PRODUCTS
           </Link>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <Link
+          {products.map((product, index) => (
+            <ScrollReveal
               key={product.slug}
+              direction="up"
+              delay={index * 100}
+              as={Link}
               to="/products"
               className="group relative bg-white rounded-3xl border border-slate-100 hover:border-accent/40 shadow-sm transition-all duration-500 flex flex-col overflow-hidden"
             >
@@ -79,7 +84,7 @@ export default function ProductsSection() {
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-accent/[0.01] to-accent/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
               {/* Padded image container with soft gradient background */}
-              <div className="h-52 bg-gradient-to-b from-slate-50/80 to-slate-100/30 flex items-center justify-center transition-all duration-500 relative z-10 border-b border-slate-100/50 overflow-hidden">
+              <div className="w-full aspect-[16/10] bg-gradient-to-b from-slate-50/80 to-slate-100/30 flex items-center justify-center transition-all duration-500 relative z-10 border-b border-slate-100/50 overflow-hidden">
                 {/* Product Badge */}
                 <span className={`absolute top-4 left-4 z-20 text-[10px] font-bold tracking-wider uppercase px-2.5 py-1 rounded-full border shadow-sm transition-all duration-300 ${
                   product.tag === "RDSO Approved" 
@@ -89,11 +94,15 @@ export default function ProductsSection() {
                   {product.tag}
                 </span>
 
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
-                />
+                <div className="w-full h-full transition-transform duration-500 ease-out transform scale-100 group-hover:scale-105">
+                  <LazyLoadImage
+                    src={product.image}
+                    alt={product.name}
+                    effect="blur"
+                    className="w-full h-full object-cover"
+                    wrapperClassName="w-full h-full"
+                  />
+                </div>
               </div>
 
               {/* Content */}
@@ -114,11 +123,11 @@ export default function ProductsSection() {
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
-            </Link>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-8 md:hidden text-center">
+        <ScrollReveal direction="up" delay={200} className="mt-8 md:hidden text-center">
           <Link
             to="/products"
             className="inline-flex items-center gap-2 text-navy font-semibold hover:text-accent transition-colors"
@@ -126,7 +135,7 @@ export default function ProductsSection() {
             VIEW ALL PRODUCTS
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

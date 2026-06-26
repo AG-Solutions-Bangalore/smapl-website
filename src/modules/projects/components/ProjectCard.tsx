@@ -1,5 +1,7 @@
 import { User, Image as ImageIcon, Layers, Scale } from "lucide-react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import type { Project } from "../data/projectsData";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 interface ProjectCardProps {
   project: Project;
@@ -18,18 +20,23 @@ export default function ProjectCard({
   return (
     <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
       {/* Image Column */}
-      <div
+      <ScrollReveal
         onClick={() => onOpenGallery(project)}
+        direction={isEven ? "left" : "right"}
         className={`relative rounded-2xl overflow-hidden shadow-md group cursor-pointer h-[320px] md:h-[380px] bg-slate-100 border border-slate-100 ${
           isEven ? "md:order-1" : "md:order-2"
         }`}
       >
         {/* Main Cover Image */}
-        <img
-          src={project.images[0]}
-          alt={project.name}
-          className="w-full h-full object-cover transition-all duration-700 ease-out group-hover:scale-105 group-hover:brightness-95"
-        />
+        <div className="w-full h-full transition-all duration-700 ease-out transform scale-100 group-hover:scale-105 group-hover:brightness-95">
+          <LazyLoadImage
+            src={project.images[0]}
+            alt={project.name}
+            effect="blur"
+            className="w-full h-full object-cover"
+            wrapperClassName="w-full h-full"
+          />
+        </div>
 
         {/* Subtle Dark Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-navy-dark/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -48,10 +55,14 @@ export default function ProjectCard({
             VIEW PHOTO GALLERY
           </div>
         </div>
-      </div>
+      </ScrollReveal>
 
       {/* Content Column */}
-      <div className={isEven ? "md:order-2" : "md:order-1"}>
+      <ScrollReveal
+        direction={isEven ? "right" : "left"}
+        delay={150}
+        className={isEven ? "md:order-2" : "md:order-1"}
+      >
         <span className="text-accent font-bold text-xs uppercase tracking-widest block mb-2">
           {project.category}
         </span>
@@ -85,7 +96,7 @@ export default function ProjectCard({
           <span>Explore Gallery</span>
           <span className="text-lg">→</span>
         </button>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }

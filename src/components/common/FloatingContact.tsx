@@ -23,6 +23,7 @@ export default function FloatingContact() {
           target="_blank"
           rel="noopener noreferrer"
           title="WhatsApp Support"
+          aria-label="Contact us via WhatsApp"
           className={`w-14 h-14 rounded-2xl bg-[#25D366] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 ${
             isOpen
               ? "opacity-100 translate-x-0 scale-100 pointer-events-auto rotate-0 delay-150"
@@ -36,6 +37,7 @@ export default function FloatingContact() {
         <a
           href="tel:+919341041347"
           title="Call Us"
+          aria-label="Call us"
           className={`w-14 h-14 rounded-2xl bg-[#ED243B] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 ${
             isOpen
               ? "opacity-100 translate-x-0 scale-100 pointer-events-auto rotate-0 delay-75"
@@ -49,6 +51,7 @@ export default function FloatingContact() {
         <a
           href="mailto:info@smapl.com"
           title="Email Us"
+          aria-label="Email us"
           className={`w-14 h-14 rounded-2xl bg-[#08182F] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 ${
             isOpen
               ? "opacity-100 translate-x-0 scale-100 pointer-events-auto rotate-0 delay-0"
@@ -63,6 +66,7 @@ export default function FloatingContact() {
       <button
         onClick={toggleOpen}
         title={isOpen ? "Close Menu" : "Contact Options"}
+        aria-label={isOpen ? "Close contact options menu" : "Open contact options menu"}
         className={`w-14 h-14 rounded-2xl bg-[#ED243B] text-white flex items-center justify-center shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ${
           isOpen ? "rotate-90 bg-slate-800" : "rotate-0"
         }`}

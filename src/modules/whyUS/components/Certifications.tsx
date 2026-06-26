@@ -1,3 +1,5 @@
+import ScrollReveal from "@/components/common/ScrollReveal";
+
 const certifications = [
   {
     label: "ISO",
@@ -35,17 +37,19 @@ export default function Certifications() {
   return (
     <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <ScrollReveal direction="up" className="text-center mb-14">
           <h2 className="text-3xl font-bold text-navy mb-3">
             OUR CERTIFICATIONS
           </h2>
           <div className="w-16 h-1 bg-accent mx-auto" />
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
-          {certifications.map((cert) => (
-            <div
+          {certifications.map((cert, index) => (
+            <ScrollReveal
               key={cert.title}
+              direction="up"
+              delay={index * 100}
               className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100"
             >
               <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
@@ -79,7 +83,7 @@ export default function Certifications() {
               <p className="text-muted-foreground text-xs leading-relaxed">
                 {cert.subtitle}
               </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

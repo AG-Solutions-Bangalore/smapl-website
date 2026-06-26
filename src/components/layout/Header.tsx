@@ -32,12 +32,16 @@ export default function Header() {
   return (
     <header className="bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="SMAPL Logo" className="h-12" />
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="SMAPL Logo" className="h-10 md:h-12" />
+          <div className="flex flex-col">
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Sulit Metals &</span>
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Alloys Private Ltd.</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Desktop navigation">
           {navLinks.map((link) =>
             link.children ? (
               <div
@@ -97,6 +101,7 @@ export default function Header() {
         <button
           className="lg:hidden text-navy p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close main menu" : "Open main menu"}
         >
           {mobileOpen ? (
             <X className="w-6 h-6" />
@@ -108,7 +113,7 @@ export default function Header() {
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-border px-4 py-4 space-y-2">
+        <nav className="lg:hidden bg-white border-t border-border px-4 py-4 space-y-2" aria-label="Mobile navigation">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label}>
@@ -160,7 +165,7 @@ export default function Header() {
           <Button className="w-full bg-accent hover:brightness-110 text-white font-semibold mt-4">
             GET A QUOTE
           </Button>
-        </div>
+        </nav>
       )}
     </header>
   );

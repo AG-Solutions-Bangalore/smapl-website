@@ -12,7 +12,29 @@
     <meta property="og:description" content="India's trusted manufacturer of Steel Bridge Girders for Indian Railways. RDSO Approved. ISO 9001:2015 Certified. 18,000 Tons/Year capacity." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.sulitmetals.com" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
     <meta property="og:locale" content="en_IN" />
+
+    <!-- Speculation Rules API for instant navigation pre-rendering -->
+    <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "where": {
+            "and": [
+              { "href_matches": "/*" },
+              { "not": { "href_matches": ["/api/*"] } }
+            ]
+          },
+          "eagerness": "moderate"
+        }
+      ]
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

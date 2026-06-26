@@ -1,20 +1,22 @@
 import { ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function QualityHero() {
   return (
     <section className="relative bg-navy-dark overflow-hidden">
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/about/about-hero.jpeg')",
-        }}}
-        }}
+      <img
+        src="/images/about/about-hero.jpeg"
+        alt=""
+        fetchPriority="high"
+        loading="eager"
+        decoding="sync"
+        className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-xl">
+        <ScrollReveal direction="up" className="max-w-xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             WHY US
           </h1>
@@ -34,7 +36,7 @@ export default function QualityHero() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-white">Why Us</span>
           </nav>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

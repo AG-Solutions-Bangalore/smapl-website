@@ -20,6 +20,7 @@ export default function ContactForm() {
             <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               placeholder="Your Name"
+              aria-label="Your Name"
               className="pl-10 h-11 rounded-xl border-gray-200 bg-gray-50/50"
             />
           </div>
@@ -28,6 +29,7 @@ export default function ContactForm() {
             <Input
               type="email"
               placeholder="Email Address"
+              aria-label="Email Address"
               className="pl-10 h-11 rounded-xl border-gray-200 bg-gray-50/50"
             />
           </div>
@@ -39,6 +41,7 @@ export default function ContactForm() {
             <Input
               type="tel"
               placeholder="Phone Number"
+              aria-label="Phone Number"
               className="pl-10 h-11 rounded-xl border-gray-200 bg-gray-50/50"
             />
           </div>
@@ -46,6 +49,7 @@ export default function ContactForm() {
             <FileText className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               placeholder="Subject"
+              aria-label="Subject"
               className="pl-10 h-11 rounded-xl border-gray-200 bg-gray-50/50"
             />
           </div>
@@ -55,6 +59,7 @@ export default function ContactForm() {
           <MessageSquare className="absolute left-3 top-3.5 w-4 h-4 text-muted-foreground" />
           <Textarea
             placeholder="Your Message"
+            aria-label="Your Message"
             rows={4}
             className="pl-10 rounded-xl border-gray-200 bg-gray-50/50 resize-none"
           />

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, FileText } from "lucide-react";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function CtaBanner() {
   return (
@@ -19,35 +20,37 @@ export default function CtaBanner() {
       />
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 py-10 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center shrink-0">
-              <FileText className="w-7 h-7 text-white" />
+        <ScrollReveal direction="up">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-full bg-accent flex items-center justify-center shrink-0">
+                <FileText className="w-7 h-7 text-white" />
+              </div>
+              <div className="text-white">
+                 <h3 className="text-xl md:text-2xl font-bold">
+                   Looking for Reliable <br /> Steel Bridge & Girder Solutions?
+                 </h3>
+               </div>
             </div>
-            <div className="text-white">
-               <h3 className="text-xl md:text-2xl font-bold">
-                 Looking for Reliable <br /> Steel Bridge & Girder Solutions?
-               </h3>
-             </div>
-          </div>
 
-          <div className="w-px h-12 bg-white/20 hidden md:block" />
+            <div className="w-px h-12 bg-white/20 hidden md:block" />
 
-          <div className="flex items-center justify-center gap-6">
-            <p className="text-gray-300 text-[1.1rem] hidden md:block">
-              Get in touch with our experts today
-              <br />
-              for the best products and services.
-            </p>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-semibold px-6 py-3 rounded transition-colors whitespace-nowrap"
-            >
-              CONTACT US NOW
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            <div className="flex items-center justify-center gap-6">
+              <p className="text-gray-300 text-[1.1rem] hidden md:block">
+                Get in touch with our experts today
+                <br />
+                for the best products and services.
+              </p>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 border-2 border-white text-white hover:bg-white hover:text-navy font-semibold px-6 py-3 rounded transition-colors whitespace-nowrap"
+              >
+                CONTACT US NOW
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

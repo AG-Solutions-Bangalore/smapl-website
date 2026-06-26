@@ -1,4 +1,5 @@
 import { Shield, Cpu, Users, Award } from "lucide-react";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const features = [
   {
@@ -32,8 +33,10 @@ export default function FeaturesSection() {
       <div className="bg-white rounded-[24px] border border-gray-100 py-12 px-8 md:pb-16 md:px-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-gray-200">
           {features.map((feature, index) => (
-            <div
+            <ScrollReveal
               key={feature.title}
+              direction="up"
+              delay={index * 150}
               className={`flex flex-col gap-5 ${
                 index === 0 ? "lg:pr-8" : index === 3 ? "lg:pl-8" : "lg:px-8"
               }`}
@@ -49,7 +52,7 @@ export default function FeaturesSection() {
               <p className="text-[14px] text-gray-500 leading-relaxed font-normal">
                 {feature.description}
               </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

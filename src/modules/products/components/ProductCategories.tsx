@@ -6,6 +6,7 @@ import {
   Hammer,
   Download,
 } from "lucide-react";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const categories = [
   { icon: LayoutGrid, label: "All Products", active: true },
@@ -20,7 +21,7 @@ const categories = [
 export default function ProductCategories() {
   return (
     <div className="space-y-6">
-      <div className="bg-accent rounded-xl overflow-hidden">
+      <ScrollReveal direction="left" className="bg-accent rounded-xl overflow-hidden">
         <div className="px-5 py-3">
           <h3 className="text-white font-bold text-sm">PRODUCT CATEGORIES</h3>
         </div>
@@ -42,9 +43,9 @@ export default function ProductCategories() {
             </button>
           ))}
         </div>
-      </div>
+      </ScrollReveal>
 
-      <div className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+      <ScrollReveal direction="left" delay={150} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-10 h-10 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
             <Download className="w-5 h-5 text-navy" />
@@ -63,7 +64,7 @@ export default function ProductCategories() {
         <button className="border-2 border-navy text-navy hover:bg-navy hover:text-white font-semibold px-5 py-2 rounded-xl text-xs transition-colors">
           DOWNLOAD NOW
         </button>
-      </div>
+      </ScrollReveal>
     </div>
   );
 }

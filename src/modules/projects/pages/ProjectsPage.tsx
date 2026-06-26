@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import ProjectGalleryModal from "../components/ProjectGalleryModal";
 import ClientsSection from "@/components/common/ClientsSection";
 import { projects, type Project } from "../data/projectsData";
+import SEO from "@/components/common/SEO";
 
 export default function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -17,6 +18,11 @@ export default function ProjectsPage() {
 
   return (
     <div className="bg-slate-50 min-h-screen">
+      <SEO 
+        title="Our Infrastructure Projects | Sulit Metals & Alloys Pvt Ltd"
+        description="Explore SMAPL's completed steel bridge projects: Open Web Girders for South Western Railway, Bow String Bridges for NHAI, and more across India."
+        keywords="Steel Bridge Projects, Railway ROB Projects, NHAI Bridges, Structural Steel Projects, Indian Railways Infrastructure"
+      />
       {/* Hero Banner */}
       <ProjectsHero />
 
