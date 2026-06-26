@@ -10,17 +10,17 @@ const navLinks = [
   {
     label: "PRODUCTS",
     children: [
-      { to: "/products/eye-bolts", label: "Eye Bolts & Eye Nuts" },
-      { to: "/products/pole-line", label: "Pole Line Hardware" },
-      { to: "/products/suspension-clamps", label: "Suspension Clamps" },
-      { to: "/products/tension-clamps", label: "Tension Clamps" },
-      { to: "/products/insulators", label: "Insulators" },
+      { to: "/products", label: "Open Web Girders" },
+      { to: "/products", label: "Composite Girders" },
+      { to: "/products", label: "Bow String Bridges" },
+      { to: "/products", label: "Railway ROB" },
+      { to: "/products", label: "Foot Over Bridge (FOB)" },
+      { to: "/products", label: "Heavy Metal Fabrication" },
       { to: "/products", label: "View All Products" },
     ],
   },
-  { to: "/quality", label: "QUALITY" },
-  { to: "/downloads", label: "DOWNLOADS" },
-  { to: "/careers", label: "CAREERS" },
+  { to: "/why-us", label: "WHY US" },
+  { to: "/projects", label: "PROJECTS" },
   { to: "/contact", label: "CONTACT US" },
 ];
 
@@ -32,12 +32,16 @@ export default function Header() {
   return (
     <header className="bg-white sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-2">
-          <img src={logo} alt="SMAPL Logo" className="h-12" />
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="SMAPL Logo" className="h-10 md:h-12" />
+          <div className="flex flex-col">
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Sulit Metals &</span>
+            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Alloys Private Ltd.</span>
+          </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1" aria-label="Desktop navigation">
           {navLinks.map((link) =>
             link.children ? (
               <div
@@ -83,7 +87,7 @@ export default function Header() {
               >
                 {link.label}
               </Link>
-            )
+            ),
           )}
         </nav>
 
@@ -97,14 +101,19 @@ export default function Header() {
         <button
           className="lg:hidden text-navy p-2"
           onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close main menu" : "Open main menu"}
         >
-          {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileOpen ? (
+            <X className="w-6 h-6" />
+          ) : (
+            <Menu className="w-6 h-6" />
+          )}
         </button>
       </div>
 
       {/* Mobile Nav */}
       {mobileOpen && (
-        <div className="lg:hidden bg-white border-t border-border px-4 py-4 space-y-2">
+        <nav className="lg:hidden bg-white border-t border-border px-4 py-4 space-y-2" aria-label="Mobile navigation">
           {navLinks.map((link) =>
             link.children ? (
               <div key={link.label}>
@@ -112,7 +121,7 @@ export default function Header() {
                   className="flex items-center justify-between w-full px-3 py-2 text-sm font-semibold text-navy hover:text-accent"
                   onClick={() =>
                     setActiveDropdown(
-                      activeDropdown === link.label ? null : link.label
+                      activeDropdown === link.label ? null : link.label,
                     )
                   }
                 >
@@ -151,12 +160,12 @@ export default function Header() {
               >
                 {link.label}
               </Link>
-            )
+            ),
           )}
           <Button className="w-full bg-accent hover:brightness-110 text-white font-semibold mt-4">
             GET A QUOTE
           </Button>
-        </div>
+        </nav>
       )}
     </header>
   );

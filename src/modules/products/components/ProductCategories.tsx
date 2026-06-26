@@ -1,28 +1,20 @@
 import {
   LayoutGrid,
-  Zap,
-  Link2,
-  Anchor,
-  Plug,
-  Disc,
-  Minus,
-  Cable,
-  Shovel,
-  Wrench,
+  Building2,
+  Layers,
+  Grid,
+  Hammer,
   Download,
 } from "lucide-react";
 
 const categories = [
   { icon: LayoutGrid, label: "All Products", active: true },
-  { icon: Zap, label: "Pole Line Hardware" },
-  { icon: Link2, label: "Suspension Clamps" },
-  { icon: Anchor, label: "Tension Clamps" },
-  { icon: Plug, label: "Dead End Hardware" },
-  { icon: Disc, label: "Insulators" },
-  { icon: Minus, label: "Line Fittings" },
-  { icon: Cable, label: "Connectors" },
-  { icon: Shovel, label: "Earthing Hardware" },
-  { icon: Wrench, label: "Tools & Accessories" },
+  { icon: Grid, label: "Open Web Girders" },
+  { icon: Layers, label: "Composite Girders" },
+  { icon: Building2, label: "Bow String Bridges" },
+  { icon: Building2, label: "Railway ROB" },
+  { icon: Building2, label: "Foot Over Bridge (FOB)" },
+  { icon: Hammer, label: "Heavy Metal Fabrication" },
 ];
 
 export default function ProductCategories() {

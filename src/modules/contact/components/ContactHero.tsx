@@ -7,10 +7,10 @@ export default function ContactHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url(https://images.unsplash.com/photo-1565008447742-97f6f38c985c?q=80&w=1399&auto=format&fit=crop)`,
+          backgroundImage: "url('/images/about/about-hero.jpeg')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/40" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20 relative z-10">
         <div className="max-w-xl">

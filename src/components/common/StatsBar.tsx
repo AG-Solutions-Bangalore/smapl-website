@@ -3,23 +3,23 @@ import { Building2, Award, Package, Users } from "lucide-react";
 const stats = [
   {
     icon: Building2,
-    value: "1994",
+    value: "2019",
     label: "Year Established",
   },
   {
     icon: Award,
-    value: "25+",
-    label: "Years of Experience",
+    value: "18,000",
+    label: "Tons/Year Capacity",
   },
   {
     icon: Package,
-    value: "500+",
-    label: "Products",
+    value: "500 KVA",
+    label: "Installed Power",
   },
   {
     icon: Users,
-    value: "1000+",
-    label: "Happy Clients",
+    value: "RDSO",
+    label: "Approved Quality",
   },
 ];
 

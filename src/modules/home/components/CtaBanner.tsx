@@ -25,10 +25,10 @@ export default function CtaBanner() {
               <FileText className="w-7 h-7 text-white" />
             </div>
             <div className="text-white">
-              <h3 className="text-xl md:text-2xl font-bold">
-                Looking for Reliable <br /> Power Line Solutions?
-              </h3>
-            </div>
+               <h3 className="text-xl md:text-2xl font-bold">
+                 Looking for Reliable <br /> Steel Bridge & Girder Solutions?
+               </h3>
+             </div>
           </div>
 
           <div className="w-px h-12 bg-white/20 hidden md:block" />

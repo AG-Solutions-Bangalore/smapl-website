@@ -1,25 +1,40 @@
+import StatsBar from "@/components/common/StatsBar";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+// import { Award, Building2, Package, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Building2, Award, Package, Users } from "lucide-react";
-import factoryImg from "@/assets/images/factory-placeholder.svg";
 
-const stats = [
-  { icon: Building2, value: "1994", label: "Established" },
-  { icon: Award, value: "25+", label: "Years of Experience" },
-  { icon: Package, value: "500+", label: "Products" },
-  { icon: Users, value: "1000+", label: "Happy Clients" },
-];
+// const stats = [
+//   { icon: Building2, value: "2019", label: "Established" },
+//   { icon: Award, value: "18,000", label: "Tons/Year Capacity" },
+//   { icon: Package, value: "500 KVA", label: "Installed Power" },
+//   { icon: Users, value: "RDSO", label: "Approved Quality" },
+// ];
+
+// const highlights = [
+//   "ISO 9001:2015 Certified Quality Management System",
+//   "Production capacity of 18,000 Tons per Year",
+//   "Factory in Gowribidanur with 20-ton and 10-Ton EOT cranes",
+//   "MOU with NABL-accredited KVS Metallurgical Labs",
+//   "Power: 350 KVA Demand, 500 KVA Installed, 250 KVA DG Backup",
+//   "Highly dedicated and committed workforce with latest equipment",
+//   "Aim for continuous improvement by adopting new practices",
+//   "Vision of growth and shared learning",
+//   "RDSO Approved for fabrication of Open Web, Composite & Steel Plate Girders",
+// ];
 
 export default function AboutSection() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid pb-10 lg:grid-cols-2 gap-12 items-center">
           {/* Factory Image */}
-          <div className="relative rounded-lg overflow-hidden">
-            <img
-              src={factoryImg}
-              alt="SMAPL Factory"
-              className="w-full h-auto"
+          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
+            <LazyLoadImage
+              src="/images/about/about_us.webp"
+              alt="SMAPL Manufacturing Facility"
+              effect="blur"
+              className="w-full h-full object-cover"
+              wrapperClassName="w-full h-full"
             />
           </div>
 
@@ -31,13 +46,24 @@ export default function AboutSection() {
             <h2 className="text-3xl md:text-4xl font-bold text-navy mb-4">
               Delivering Strength. Building Trust.
             </h2>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Sai Moulded Appliances Pvt. Ltd. (SMAPL) established in 1994, is a
-              leading manufacturer and supplier of Power Line Hardware & Pole Line
-              Hardware. With modern infrastructure, skilled workforce and commitment
-              to quality, we deliver products that ensure safety, durability and
-              reliability in every connection.
-            </p>
+            <div className="text-muted-foreground leading-relaxed mb-6 space-y-4 text-sm md:text-base">
+              <p>
+                <strong>Sulit Metals & Alloys Private Ltd. (SMAPL)</strong> is a
+                leading manufacturer and supplier of steel girders, located in
+                Karnataka, India.
+              </p>
+              <p>
+                Incorporated on <strong>20th November 2019</strong> under the
+                Companies Act, 2013, SMAPL undertakes contracts for fabrication,
+                erection and commissioning of Bridges and Girders for Indian
+                Railways and infrastructure projects across India. Our directors
+                —{" "}
+                <strong>
+                  Abhishek Agarwal, Mukesh Tibrewal & Avinash Agarwal
+                </strong>{" "}
+                — bring deep expertise in Iron and Steel.
+              </p>
+            </div>
             <Link
               to="/about"
               className="inline-block bg-navy text-white font-semibold px-6 py-3 rounded hover:bg-navy-light transition-colors"
@@ -47,23 +73,25 @@ export default function AboutSection() {
           </div>
         </div>
 
+        {/* Two-column Points Sub-section */}
+        {/* <div className="mt-16 pt-12 border-t border-slate-100">
+          <h3 className="text-lg font-bold text-navy mb-6 uppercase tracking-wider">
+            Our Strengths
+          </h3>
+          <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
+            {highlights.map((item) => (
+              <div key={item} className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 bg-accent text-white shrink-0 rounded-full mt-0.5" />
+                <span className="text-navy font-medium text-sm md:text-base leading-relaxed">
+                  {item}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div> */}
+
         {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12">
-          {stats.map((stat) => (
-            <div
-              key={stat.label}
-              className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg"
-            >
-              <div className="w-12 h-12 rounded-full bg-navy/10 flex items-center justify-center shrink-0">
-                <stat.icon className="w-6 h-6 text-navy" />
-              </div>
-              <div>
-                <div className="text-2xl font-bold text-navy">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            </div>
-          ))}
-        </div>
+        <StatsBar />
       </div>
     </section>
   );
