@@ -1,5 +1,6 @@
 import { ChevronRight, Home } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 export default function ProjectsHero() {
   return (
@@ -13,7 +14,7 @@ export default function ProjectsHero() {
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />
 
       <div className="max-w-7xl mx-auto px-6 py-20 relative z-10">
-        <div className="max-w-xl">
+        <ScrollReveal direction="up" className="max-w-xl">
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
             OUR PROJECTS
           </h1>
@@ -29,7 +30,7 @@ export default function ProjectsHero() {
             <ChevronRight className="w-4 h-4" />
             <span className="text-white">Projects</span>
           </nav>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

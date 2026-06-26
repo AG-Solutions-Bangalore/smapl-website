@@ -1,5 +1,6 @@
 import { CheckCircle2 } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const highlights = [
   "ISO 9001:2015 Certified Quality Management System",
@@ -18,7 +19,7 @@ export default function WhoWeAre() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div>
+          <ScrollReveal direction="left">
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-3">
               WHO WE ARE
             </p>
@@ -47,9 +48,9 @@ export default function WhoWeAre() {
                 — a principle we uphold in every project we deliver.
               </p>
             </div>
-          </div>
+          </ScrollReveal>
 
-          <div className="relative w-full">
+          <ScrollReveal direction="right" delay={150} className="relative w-full">
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
               <LazyLoadImage
                 src="/images/about/about_us.webp"
@@ -59,22 +60,29 @@ export default function WhoWeAre() {
                 wrapperClassName="w-full h-full"
               />
             </div>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Two-column Points Sub-section */}
         <div className="mt-16 pt-12 border-t border-slate-100">
-          <h3 className="text-lg font-bold text-navy mb-6 uppercase tracking-wider">
-            Our Strengths
-          </h3>
+          <ScrollReveal direction="up">
+            <h3 className="text-lg font-bold text-navy mb-6 uppercase tracking-wider">
+              Our Strengths
+            </h3>
+          </ScrollReveal>
           <div className="grid md:grid-cols-2 gap-x-12 gap-y-4">
-            {highlights.map((item) => (
-              <div key={item} className="flex items-start gap-3">
+            {highlights.map((item, index) => (
+              <ScrollReveal
+                key={item}
+                direction="up"
+                delay={(index % 4) * 100}
+                className="flex items-start gap-3"
+              >
                 <CheckCircle2 className="w-5 h-5 bg-accent text-white shrink-0 rounded-full mt-0.5" />
                 <span className="text-navy font-medium text-sm md:text-base leading-relaxed">
                   {item}
                 </span>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>

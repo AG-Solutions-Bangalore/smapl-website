@@ -1,4 +1,5 @@
 import { Shield, Cpu, FlaskConical, RefreshCw, Users } from "lucide-react";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const commitments = [
   {
@@ -37,7 +38,7 @@ export default function QualityCommitment() {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-14">
+        <ScrollReveal direction="up" className="text-center mb-14">
           <h2 className="text-3xl font-bold text-navy mb-3">
             OUR QUALITY COMMITMENT
           </h2>
@@ -47,11 +48,11 @@ export default function QualityCommitment() {
             final dispatch, every product undergoes stringent quality checks to ensure it meets
             international standards and exceeds customer expectations.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
-          {commitments.map((item) => (
-            <div key={item.title} className="text-center">
+          {commitments.map((item, index) => (
+            <ScrollReveal key={item.title} direction="up" delay={index * 100} className="text-center">
               <div className="w-16 h-16 rounded-full border-2 border-accent flex items-center justify-center mx-auto mb-4">
                 <item.icon className="w-7 h-7 text-accent" />
               </div>
@@ -59,7 +60,7 @@ export default function QualityCommitment() {
               <p className="text-muted-foreground text-xs leading-relaxed">
                 {item.description}
               </p>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

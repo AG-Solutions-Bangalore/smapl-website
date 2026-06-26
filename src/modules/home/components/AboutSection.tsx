@@ -2,6 +2,7 @@ import StatsBar from "@/components/common/StatsBar";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 // import { Award, Building2, Package, Users } from "lucide-react";
 import { Link } from "react-router-dom";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 // const stats = [
 //   { icon: Building2, value: "2019", label: "Established" },
@@ -28,7 +29,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid pb-10 lg:grid-cols-2 gap-12 items-center">
           {/* Factory Image */}
-          <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
+          <ScrollReveal direction="left" className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
             <LazyLoadImage
               src="/images/about/about_us.webp"
               alt="SMAPL Manufacturing Facility"
@@ -36,10 +37,10 @@ export default function AboutSection() {
               className="w-full h-full object-cover"
               wrapperClassName="w-full h-full"
             />
-          </div>
+          </ScrollReveal>
 
           {/* Content */}
-          <div>
+          <ScrollReveal direction="right" delay={150}>
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
               ABOUT US
             </p>
@@ -70,7 +71,7 @@ export default function AboutSection() {
             >
               READ MORE ABOUT US
             </Link>
-          </div>
+          </ScrollReveal>
         </div>
 
         {/* Two-column Points Sub-section */}

@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { ArrowRight } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const facilitiesList = [
   {
@@ -115,7 +116,7 @@ export default function TestingFacilities() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Header Block */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
+        <ScrollReveal direction="up" className="flex flex-col lg:flex-row lg:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
             <span className="text-navy font-bold text-xs tracking-wider uppercase bg-navy/5 px-4 py-1.5 rounded-full border border-navy/10 inline-block mb-4">
               Infrastructure & Quality
@@ -135,100 +136,107 @@ export default function TestingFacilities() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </div> */}
-        </div>
+        </ScrollReveal>
 
         {/* Grid of Equipment Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {facilitiesList.map((item) => (
-            <Dialog key={item.title}>
-              <DialogTrigger asChild>
-                <div className="group cursor-pointer bg-white rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy/20 transition-all duration-500 flex flex-col h-full relative">
-                  {/* Card Image */}
-                  <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent z-10 opacity-60 group-hover:opacity-85 transition-opacity duration-500" />
-                    <div className="w-full h-full transition-transform duration-700 ease-out transform scale-100 group-hover:scale-105">
-                      <LazyLoadImage
-                        src={item.image}
-                        alt={item.title}
-                        effect="blur"
-                        className="w-full h-full object-cover"
-                        wrapperClassName="w-full h-full"
-                      />
-                    </div>
-                    <span className="absolute top-4 left-4 z-20 text-[10px] font-bold text-white bg-navy/85 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
-                      {item.tag}
-                    </span>
-                  </div>
-
-                  {/* Card Body */}
-                  <div className="p-6 flex flex-col flex-grow">
-                    <span className="text-[10px] text-navy font-bold uppercase tracking-wider mb-2 block">
-                      {item.category}
-                    </span>
-                    <h3 className="font-bold text-navy text-lg mb-2 group-hover:text-navy-light transition-colors duration-300 leading-snug">
-                      {item.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
-                      {item.description}
-                    </p>
-                    <div className="flex items-center text-xs font-bold text-navy group-hover:text-navy-light transition-colors mt-auto">
-                      VIEW SPECIFICATIONS
-                      <ArrowRight className="w-3.5 h-3.5 ml-1.5 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" />
-                    </div>
-                  </div>
-                </div>
-              </DialogTrigger>
-
-              <DialogContent className="sm:max-w-2xl max-w-lg p-0 overflow-hidden border-none shadow-2xl bg-white rounded-3xl">
-                {/* Modal Header/Banner */}
-                <div className="relative w-full aspect-[16/7] bg-slate-900">
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent z-10" />
-                  <LazyLoadImage
-                    src={item.image}
-                    alt={item.title}
-                    effect="blur"
-                    className="w-full h-full object-cover"
-                    wrapperClassName="w-full h-full"
-                  />
-                  <div className="absolute bottom-6 left-6 right-6 z-20">
-                    <span className="text-[10px] font-bold text-white bg-navy/90 backdrop-blur px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 inline-block border border-white/10">
-                      {item.category}
-                    </span>
-                    <DialogTitle className="text-xl md:text-2xl font-extrabold text-white tracking-tight">
-                      {item.title}
-                    </DialogTitle>
-                  </div>
-                </div>
-
-                {/* Modal Body */}
-                <div className="p-6 md:p-8">
-                  <DialogDescription className="text-slate-600 text-sm leading-relaxed mb-6">
-                    {item.longDescription}
-                  </DialogDescription>
-
-                  <h4 className="font-bold text-navy text-xs tracking-wider uppercase mb-4 pb-2 border-b border-slate-100 flex items-center">
-                    <span className="w-1.5 h-3 bg-navy rounded-sm mr-2" />
-                    Technical Specifications
-                  </h4>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-60 overflow-y-auto pr-1">
-                    {Object.entries(item.specs).map(([key, value]) => (
-                      <div
-                        key={key}
-                        className="bg-slate-50/80 rounded-xl p-3.5 border border-slate-100 flex flex-col"
-                      >
-                        <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
-                          {key}
-                        </span>
-                        <span className="text-sm font-bold text-navy mt-1">
-                          {value}
-                        </span>
+          {facilitiesList.map((item, index) => (
+            <ScrollReveal
+              key={item.title}
+              direction="up"
+              delay={(index % 3) * 120}
+              className="h-full"
+            >
+              <Dialog>
+                <DialogTrigger asChild>
+                  <div className="group cursor-pointer bg-white rounded-2xl border border-slate-200/60 overflow-hidden shadow-sm hover:shadow-xl hover:border-navy/20 transition-all duration-500 flex flex-col h-full relative">
+                    {/* Card Image */}
+                    <div className="relative w-full aspect-[16/10] overflow-hidden bg-slate-900">
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent z-10 opacity-60 group-hover:opacity-85 transition-opacity duration-500" />
+                      <div className="w-full h-full transition-transform duration-700 ease-out transform scale-100 group-hover:scale-105">
+                        <LazyLoadImage
+                          src={item.image}
+                          alt={item.title}
+                          effect="blur"
+                          className="w-full h-full object-cover"
+                          wrapperClassName="w-full h-full"
+                        />
                       </div>
-                    ))}
+                      <span className="absolute top-4 left-4 z-20 text-[10px] font-bold text-white bg-navy/85 backdrop-blur-md px-3 py-1 rounded-full uppercase tracking-wider border border-white/10">
+                        {item.tag}
+                      </span>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="p-6 flex flex-col flex-grow">
+                      <span className="text-[10px] text-navy font-bold uppercase tracking-wider mb-2 block">
+                        {item.category}
+                      </span>
+                      <h3 className="font-bold text-navy text-lg mb-2 group-hover:text-navy-light transition-colors duration-300 leading-snug">
+                        {item.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed mb-6 flex-grow">
+                        {item.description}
+                      </p>
+                      <div className="flex items-center text-xs font-bold text-navy group-hover:text-navy-light transition-colors mt-auto">
+                        VIEW SPECIFICATIONS
+                        <ArrowRight className="w-3.5 h-3.5 ml-1.5 transform translate-x-0 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </DialogContent>
-            </Dialog>
+                </DialogTrigger>
+
+                <DialogContent className="sm:max-w-2xl max-w-lg p-0 overflow-hidden border-none shadow-2xl bg-white rounded-3xl">
+                  {/* Modal Header/Banner */}
+                  <div className="relative w-full aspect-[16/7] bg-slate-900">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent z-10" />
+                    <LazyLoadImage
+                      src={item.image}
+                      alt={item.title}
+                      effect="blur"
+                      className="w-full h-full object-cover"
+                      wrapperClassName="w-full h-full"
+                    />
+                    <div className="absolute bottom-6 left-6 right-6 z-20">
+                      <span className="text-[10px] font-bold text-white bg-navy/90 backdrop-blur px-3 py-1 rounded-full uppercase tracking-wider mb-2.5 inline-block border border-white/10">
+                        {item.category}
+                      </span>
+                      <DialogTitle className="text-xl md:text-2xl font-extrabold text-white tracking-tight">
+                        {item.title}
+                      </DialogTitle>
+                    </div>
+                  </div>
+
+                  {/* Modal Body */}
+                  <div className="p-6 md:p-8">
+                    <DialogDescription className="text-slate-600 text-sm leading-relaxed mb-6">
+                      {item.longDescription}
+                    </DialogDescription>
+
+                    <h4 className="font-bold text-navy text-xs tracking-wider uppercase mb-4 pb-2 border-b border-slate-100 flex items-center">
+                      <span className="w-1.5 h-3 bg-navy rounded-sm mr-2" />
+                      Technical Specifications
+                    </h4>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-60 overflow-y-auto pr-1">
+                      {Object.entries(item.specs).map(([key, value]) => (
+                        <div
+                          key={key}
+                          className="bg-slate-50/80 rounded-xl p-3.5 border border-slate-100 flex flex-col"
+                        >
+                          <span className="text-[10px] text-muted-foreground font-semibold uppercase tracking-wider">
+                            {key}
+                          </span>
+                          <span className="text-sm font-bold text-navy mt-1">
+                            {value}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            </ScrollReveal>
           ))}
         </div>
       </div>

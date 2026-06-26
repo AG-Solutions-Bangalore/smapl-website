@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const products = [
   {
@@ -51,7 +52,7 @@ export default function ProductsSection() {
   return (
     <section className="py-20 mt-6 bg-gray-50/50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-end justify-between mb-10">
+        <ScrollReveal direction="up" className="flex items-end justify-between mb-10">
           <div>
             <p className="text-accent font-semibold text-sm uppercase tracking-wider mb-2">
               OUR PRODUCTS AND SERVICES
@@ -67,12 +68,15 @@ export default function ProductsSection() {
           >
             VIEW ALL PRODUCTS
           </Link>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {products.map((product) => (
-            <Link
+          {products.map((product, index) => (
+            <ScrollReveal
               key={product.slug}
+              direction="up"
+              delay={index * 100}
+              as={Link}
               to="/products"
               className="group relative bg-white rounded-3xl border border-slate-100 hover:border-accent/40 shadow-sm transition-all duration-500 flex flex-col overflow-hidden"
             >
@@ -119,11 +123,11 @@ export default function ProductsSection() {
                   <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300" />
                 </div>
               </div>
-            </Link>
+            </ScrollReveal>
           ))}
         </div>
 
-        <div className="mt-8 md:hidden text-center">
+        <ScrollReveal direction="up" delay={200} className="mt-8 md:hidden text-center">
           <Link
             to="/products"
             className="inline-flex items-center gap-2 text-navy font-semibold hover:text-accent transition-colors"
@@ -131,7 +135,7 @@ export default function ProductsSection() {
             VIEW ALL PRODUCTS
             <ArrowRight className="w-4 h-4" />
           </Link>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

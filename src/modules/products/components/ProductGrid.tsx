@@ -1,6 +1,7 @@
 import { Search, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import ScrollReveal from "@/components/common/ScrollReveal";
 
 const products = [
   {
@@ -44,7 +45,7 @@ const products = [
 export default function ProductGrid() {
   return (
     <div>
-      <div className="flex items-center justify-between mb-8">
+      <ScrollReveal direction="up" className="flex items-center justify-between mb-8">
         <h2 className="text-2xl font-bold text-navy">
           OUR PRODUCT AND SERVICES
         </h2>
@@ -61,12 +62,14 @@ export default function ProductGrid() {
             <Search className="w-4 h-4" />
           </button>
         </div>
-      </div>
+      </ScrollReveal>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product) => (
-          <div
+        {products.map((product, index) => (
+          <ScrollReveal
             key={product.title}
+            direction="up"
+            delay={index * 100}
             className="group bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
           >
             <div className="w-full aspect-[4/3] overflow-hidden bg-gray-100">
@@ -90,7 +93,7 @@ export default function ProductGrid() {
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>
-          </div>
+          </ScrollReveal>
         ))}
       </div>
     </div>
