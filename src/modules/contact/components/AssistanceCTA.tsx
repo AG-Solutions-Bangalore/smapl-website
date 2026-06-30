@@ -17,10 +17,12 @@ export default function AssistanceCTA() {
           </div>
         </div>
 
-        <Button className="bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-xl font-semibold whitespace-nowrap">
-          <Phone className="w-4 h-4 mr-2" />
-          CALL NOW: +91 93410 41347
-        </Button>
+        <a href="tel:+919916927508">
+          <Button className="bg-accent hover:bg-accent/90 text-white px-6 py-2.5 rounded-xl font-semibold whitespace-nowrap">
+            <Phone className="w-4 h-4 mr-2" />
+            CALL NOW: +91 99169 27508
+          </Button>
+        </a>
       </div>
     </section>
   );

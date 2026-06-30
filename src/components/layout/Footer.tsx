@@ -135,27 +135,38 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-sm text-gray-300">
                 <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
-                <span>
-                  SF No. 432/1B1, 432/2B2, 433/3B, S.F. No. 436/2B,
-                  Arasampalayam, Coimbatore - 641 407, Tamil Nadu, India.
-                </span>
+                <div>
+                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">Factory / Works</strong>
+                  <span className="block mb-2 text-xs leading-normal">
+                    19-P2, Gowribidanur Industrial Area, 2nd Phase,
+                    Kudumalakunte Village, Kasaba Hobli,
+                    Gowribidanur, Chikkaballapura District,
+                    Karnataka – 561208, India
+                  </span>
+                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">Registered Office</strong>
+                  <span className="block text-xs leading-normal">
+                    No. 8, 2nd Floor, 100 Feet Road, 15th Cross,
+                    Sarakki, J P Nagar, 6th Phase,
+                    Bengaluru – 560078, Karnataka, India
+                  </span>
+                </div>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-300">
                 <Phone className="w-5 h-5 shrink-0" />
                 <a
-                  href="tel:+919341041347"
+                  href="tel:+919916927508"
                   className="hover:text-accent transition-colors"
                 >
-                  +91 93410 41347
+                  +91 99169 27508
                 </a>
               </li>
               <li className="flex items-center gap-3 text-sm text-gray-300">
                 <Mail className="w-5 h-5 shrink-0" />
                 <a
-                  href="mailto:info@smapl.com"
+                  href="mailto:sulitmetals@gmail.com"
                   className="hover:text-accent transition-colors"
                 >
-                  info@smapl.com
+                  sulitmetals@gmail.com
                 </a>
               </li>
             </ul>
