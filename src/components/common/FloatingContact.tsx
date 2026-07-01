@@ -19,7 +19,7 @@ export default function FloatingContact() {
       <div className="flex items-center gap-3">
         {/* WhatsApp Icon */}
         <a
-          href="https://wa.me/919341041347"
+          href="https://wa.me/919916927508"
           target="_blank"
           rel="noopener noreferrer"
           title="WhatsApp Support"
@@ -35,7 +35,7 @@ export default function FloatingContact() {
 
         {/* Phone Icon */}
         <a
-          href="tel:+919341041347"
+          href="tel:+919916927508"
           title="Call Us"
           aria-label="Call us"
           className={`w-14 h-14 rounded-2xl bg-[#ED243B] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 ${
@@ -49,7 +49,7 @@ export default function FloatingContact() {
 
         {/* Email Icon */}
         <a
-          href="mailto:info@smapl.com"
+          href="mailto:sulitmetals@gmail.com"
           title="Email Us"
           aria-label="Email us"
           className={`w-14 h-14 rounded-2xl bg-[#08182F] text-white flex items-center justify-center shadow-lg hover:scale-110 active:scale-95 transition-all duration-300 ${

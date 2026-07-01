@@ -12,21 +12,21 @@ export default function TopBar() {
         </div>
         <div className="hidden md:flex items-center gap-6">
           <a
-            href="mailto:info@smapl.com"
+            href="mailto:sulitmetals@gmail.com"
             className="flex items-center gap-2 hover:text-accent transition-colors"
           >
             <Mail className="w-4 h-4" />
-            <span>info@smapl.com</span>
+            <span>sulitmetals@gmail.com</span>
           </a>
 
           {/*  */}
 
           <a
-            href="tel:+919341041347"
+            href="tel:+919916927508"
             className="flex items-center gap-2 border-l pl-3 hover:text-accent transition-colors"
           >
             <Phone className="w-4 h-4" />
-            <span>+91 93410 41347</span>
+            <span>+91 99169 27508</span>
           </a>
         </div>
       </div>
