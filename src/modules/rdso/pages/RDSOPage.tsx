@@ -110,8 +110,8 @@ const videos = [
 const approvalsAndRegistrations = [
   {
     title: "RDSO Approval Letter",
-    fileName: "RDSO Approved Letter.pdf",
-    path: "/docs/sulit website documents/RDSO Approved Letter.pdf",
+    fileName: "RDSO Approve Letter.pdf",
+    path: "/docs/RDSO Approve Letter.pdf",
     size: "91 KB",
     type: "Approval",
     details: "Research Designs and Standards Organisation (RDSO) official approval letter for structural steel fabrication."
@@ -212,6 +212,12 @@ const infrastructureAssets = {
       fileName: "FACTORY LAYOUT (2).pdf",
       path: "/docs/sulit website documents/FACTORY LAYOUT (2).pdf",
       size: "88 KB"
+    },
+    {
+      title: "Power Allocation Details",
+      fileName: "POWER DETAILES.pdf",
+      path: "/docs/POWER DETAILES.pdf",
+      size: "PDF Doc"
     }
   ]
 };
@@ -296,16 +302,20 @@ const artisansCertifications = [
 const projectTrackRecord = [
   {
     title: "Executed Works & Supplies (Last 5 Years)",
-    description: "Detailed spreadsheet showing completed structural contracts, tonnages, and client verifications.",
-    fileName: "EXECUTED PROJECT revised .xlsx",
-    path: "/docs/sulit website documents/EXECUTED PROJECT revised .xlsx",
+    description: "Detailed sheet showing completed structural contracts, tonnages, and client verifications.",
+    excelName: "EXECUTED PROJECT revised .xlsx",
+    excelPath: "/docs/sulit website documents/EXECUTED PROJECT revised .xlsx",
+    pdfName: "EXCUTED PROJECT.pdf",
+    pdfPath: "/docs/EXCUTED PROJECT.pdf",
     size: "15 KB"
   },
   {
     title: "Projects in Hand Details",
     description: "List of active fabrication and erection works currently under execution.",
-    fileName: "IN HAND  PROJECT DETAILS .xlsx",
-    path: "/docs/sulit website documents/IN HAND  PROJECT DETAILS .xlsx",
+    excelName: "IN HAND  PROJECT DETAILS .xlsx",
+    excelPath: "/docs/sulit website documents/IN HAND  PROJECT DETAILS .xlsx",
+    pdfName: "IN HAND PROJECT.pdf",
+    pdfPath: "/docs/IN HAND PROJECT.pdf",
     size: "13 KB"
   }
 ];
@@ -542,7 +552,7 @@ export default function RDSOPage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-3">
                 <Button variant="outline" className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl font-semibold text-xs" asChild>
-                  <a href="/docs/sulit website documents/organization chart.pdf" target="_blank" rel="noopener noreferrer">
+                  <a href="/docs/organization chart.pdf" target="_blank" rel="noopener noreferrer">
                     <Download className="w-3.5 h-3.5" /> View Official Organisation Chart (PDF)
                   </a>
                 </Button>
@@ -577,7 +587,7 @@ export default function RDSOPage() {
         {activeTab === "projects" && (
           <ScrollReveal direction="none" className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projectTrackRecord.map((track) => (
-              <div key={track.title} className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-[200px] hover:shadow-md transition-shadow">
+              <div key={track.title} className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-auto hover:shadow-md transition-shadow">
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
@@ -586,15 +596,24 @@ export default function RDSOPage() {
                     <span className="text-slate-400 text-xs font-semibold">{track.size}</span>
                   </div>
                   <h3 className="font-bold text-slate-900 text-lg mb-1 leading-snug">{track.title}</h3>
-                  <p className="text-slate-500 text-xs leading-normal">{track.description}</p>
+                  <p className="text-slate-500 text-xs leading-normal mb-4">{track.description}</p>
                 </div>
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-slate-400 truncate max-w-[180px]">{track.fileName}</span>
-                  <Button variant="outline" size="sm" className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1.5 font-semibold text-xs" asChild>
-                    <a href={track.path} target="_blank" rel="noopener noreferrer">
-                      <Download className="w-3.5 h-3.5" /> Open Spreadsheet (Excel)
-                    </a>
-                  </Button>
+                <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-2 justify-between">
+                  <span className="text-[10px] font-mono text-slate-400 truncate max-w-[150px] self-start sm:self-center">
+                    {track.pdfName}
+                  </span>
+                  <div className="flex items-center gap-2 w-full sm:w-auto">
+                    <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs h-8" asChild>
+                      <a href={track.pdfPath} target="_blank" rel="noopener noreferrer">
+                        View PDF
+                      </a>
+                    </Button>
+                    <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-slate-300 text-slate-700 hover:bg-slate-50 rounded-xl gap-1 font-semibold text-xs h-8" asChild>
+                      <a href={track.excelPath} target="_blank" rel="noopener noreferrer">
+                        Excel
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             ))}

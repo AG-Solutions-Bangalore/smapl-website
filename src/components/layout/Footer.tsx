@@ -37,8 +37,12 @@ export default function Footer() {
                 className="h-14 brightness-0 invert w-fit mb-3"
               />
               <div className="flex flex-col">
-                <span className="text-lg font-bold text-white leading-tight tracking-wide">Sulit Metals &</span>
-                <span className="text-lg font-bold text-white leading-tight tracking-wide">Alloys Private Ltd.</span>
+                <span className="text-lg font-bold text-white leading-tight tracking-wide">
+                  Sulit Metals &
+                </span>
+                <span className="text-lg font-bold text-white leading-tight tracking-wide">
+                  Alloys Private Ltd.
+                </span>
               </div>
             </div>
             <p className="text-sm text-gray-300 leading-relaxed">
@@ -136,18 +140,20 @@ export default function Footer() {
               <li className="flex items-start gap-3 text-sm text-gray-300">
                 <MapPin className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
-                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">Factory / Works</strong>
+                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">
+                    Factory / Works
+                  </strong>
                   <span className="block mb-2 text-xs leading-normal">
                     19-P2, Gowribidanur Industrial Area, 2nd Phase,
-                    Kudumalakunte Village, Kasaba Hobli,
-                    Gowribidanur, Chikkaballapura District,
-                    Karnataka – 561208, India
+                    Kudumalakunte Village, Kasaba Hobli, Gowribidanur,
+                    Chikkaballapura District, Karnataka – 561208, India
                   </span>
-                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">Registered Office</strong>
+                  <strong className="text-white block text-xs uppercase tracking-wider mb-0.5">
+                    Registered Office
+                  </strong>
                   <span className="block text-xs leading-normal">
-                    No. 8, 2nd Floor, 100 Feet Road, 15th Cross,
-                    Sarakki, J P Nagar, 6th Phase,
-                    Bengaluru – 560078, Karnataka, India
+                    No. 8, 2nd Floor, 100 Feet Road, 15th Cross, Sarakki, J P
+                    Nagar, 6th Phase, Bengaluru – 560078, Karnataka, India
                   </span>
                 </div>
               </li>
@@ -186,7 +192,7 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-shadow-white transition-colors"
             >
-              AGS Demo
+              AG Solutions
             </a>
           </p>
         </div>
