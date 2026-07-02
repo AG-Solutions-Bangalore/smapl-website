@@ -21,6 +21,7 @@ const navLinks = [
   },
   { to: "/why-us", label: "WHY US" },
   { to: "/projects", label: "PROJECTS" },
+  { to: "/rdso-approval", label: "RDSO APPROVAL" },
   { to: "/contact", label: "CONTACT US" },
 ];
 
