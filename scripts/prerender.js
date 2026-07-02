@@ -61,6 +61,7 @@ server.listen(0, async () => {
       "/products",
       "/why-us",
       "/projects",
+      "/rdso-approval",
       "/contact"
     ];
 

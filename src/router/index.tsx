@@ -51,6 +51,13 @@ export const router = createBrowserRouter([
         },
       },
       {
+        path: "rdso-approval",
+        lazy: async () => {
+          const { default: Component } = await import("@/modules/rdso/pages/RDSOPage");
+          return { Component };
+        },
+      },
+      {
         path: "contact",
         lazy: async () => {
           const { default: Component } = await import("@/modules/contact/pages/ContactPage");
