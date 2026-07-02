@@ -6,7 +6,6 @@ import {
   MapPin, 
   Phone, 
   Mail, 
-  Play, 
   Award, 
   Briefcase, 
   Building2, 
@@ -758,7 +757,7 @@ export default function RDSOPage() {
         </div>
       </section>
 
-      {/* Video Integration Section */}
+      {/* Video Integration Section (Hidden for the time being)
       <section className="bg-slate-100 border-y border-slate-200 py-20">
         <div className="max-w-7xl mx-auto px-6">
           <ScrollReveal direction="up" className="text-center max-w-3xl mx-auto mb-16">
@@ -774,7 +773,7 @@ export default function RDSOPage() {
             {videos.map((vid, index) => (
               <ScrollReveal direction="up" delay={index * 150} key={vid.id}>
                 <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                  {/* Thumbnail / Branded Video Trigger */}
+                  
                   <div 
                     className="relative aspect-16/9 bg-slate-950 group cursor-pointer overflow-hidden border-b border-slate-100"
                     onClick={() => setActiveVideo(vid.id)}
@@ -785,10 +784,10 @@ export default function RDSOPage() {
                       className="w-full h-full object-cover opacity-75 transition-transform duration-500 group-hover:scale-105 group-hover:opacity-85"
                     />
                     
-                    {/* Branded Overlay & Logo */}
+                    
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
                     
-                    {/* Floating Branding Badge */}
+                    
                     <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-white/20 flex items-center gap-1.5">
                       <div className="w-2.5 h-2.5 rounded-full bg-red-500 animate-pulse" />
                       <span className="text-[10px] font-bold text-white uppercase tracking-wider">SMAPL Corporate</span>
@@ -798,7 +797,7 @@ export default function RDSOPage() {
                       {vid.duration} MIN
                     </div>
 
-                    {/* Central Play Button */}
+                    
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 rounded-full bg-white/95 text-[#042D61] flex items-center justify-center shadow-lg group-hover:bg-[#C5A880] group-hover:text-slate-950 group-hover:scale-110 transition-all duration-300">
                         <Play className="w-7 h-7 fill-current ml-1" />
@@ -806,7 +805,7 @@ export default function RDSOPage() {
                     </div>
                   </div>
 
-                  {/* Info details */}
+                  
                   <div className="p-6 md:p-8 flex-1 flex flex-col justify-between">
                     <div>
                       <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#042D61] transition-colors leading-snug">
@@ -835,6 +834,7 @@ export default function RDSOPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Address & Contacts Section */}
       <section className="bg-[#0B2545] text-white py-20 relative overflow-hidden">
