@@ -205,19 +205,22 @@ const infrastructureAssets = {
       title: "Machinery & Plants List",
       fileName: "Sulit Machinery.pdf",
       path: "/docs/sulit website documents/Sulit Machinery.pdf",
-      size: "670 KB"
+      size: "670 KB",
+      actionLabel: "View Machinery List"
     },
     {
       title: "Factory Layout Blueprint",
       fileName: "FACTORY LAYOUT (2).pdf",
       path: "/docs/sulit website documents/FACTORY LAYOUT (2).pdf",
-      size: "88 KB"
+      size: "88 KB",
+      actionLabel: "View Factory Layout"
     },
     {
       title: "Power Allocation Details",
       fileName: "POWER DETAILES.pdf",
       path: "/docs/POWER DETAILES.pdf",
-      size: "PDF Doc"
+      size: "PDF Doc",
+      actionLabel: "View Power Details"
     }
   ]
 };
@@ -530,7 +533,7 @@ export default function RDSOPage() {
                     </div>
                     <Button variant="outline" size="sm" className="w-full mt-4 border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1.5 font-semibold text-xs" asChild>
                       <a href={doc.path} target="_blank" rel="noopener noreferrer">
-                        <Download className="w-3.5 h-3.5" /> Download / View Layout
+                        <Download className="w-3.5 h-3.5" /> {doc.actionLabel || "View File"}
                       </a>
                     </Button>
                   </div>
