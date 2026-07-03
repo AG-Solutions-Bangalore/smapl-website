@@ -8,7 +8,14 @@ export function getAssetUrl(path: string): string {
   if (path.startsWith("http://") || path.startsWith("https://")) {
     return path;
   }
-  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  let cleanPath = path;
+  if (cleanPath.startsWith("/docs/")) {
+    cleanPath = cleanPath.slice(6);
+  } else if (cleanPath.startsWith("docs/")) {
+    cleanPath = cleanPath.slice(5);
+  } else if (cleanPath.startsWith("/")) {
+    cleanPath = cleanPath.slice(1);
+  }
   return `${ASSETS_BASE_URL}${cleanPath}`;
 }
 

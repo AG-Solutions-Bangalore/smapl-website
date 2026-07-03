@@ -552,7 +552,7 @@ export default function RDSOPage() {
                     asChild
                   >
                     <a
-                      href={doc.path}
+                      href={getAssetUrl(doc.path)}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -638,7 +638,7 @@ export default function RDSOPage() {
                       asChild
                     >
                       <a
-                        href={doc.path}
+                        href={getAssetUrl(doc.path)}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -673,7 +673,7 @@ export default function RDSOPage() {
                   asChild
                 >
                   <a
-                    href="/docs/artisans/Organization_Chart.pdf"
+                    href={getAssetUrl("/docs/artisans/Organization_Chart.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -712,7 +712,7 @@ export default function RDSOPage() {
                       asChild
                     >
                       <a
-                        href={artisan.path}
+                        href={getAssetUrl(artisan.path)}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -765,7 +765,7 @@ export default function RDSOPage() {
                       asChild
                     >
                       <a
-                        href={track.pdfPath}
+                        href={getAssetUrl(track.pdfPath)}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -779,7 +779,7 @@ export default function RDSOPage() {
                       asChild
                     >
                       <a
-                        href={track.excelPath}
+                        href={getAssetUrl(track.excelPath)}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
