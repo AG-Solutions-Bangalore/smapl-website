@@ -658,10 +658,10 @@ export default function RDSOPage() {
                       <img 
                         src={member.image} 
                         alt={member.name} 
-                        className="w-48 h-48 rounded-full object-cover border-4 border-white/25 shadow-lg mb-4 relative z-10 shrink-0"
+                        className="w-48 h-56 rounded-3xl object-cover border-4 border-white/20 shadow-lg mb-4 relative z-10 shrink-0"
                       />
                     ) : (
-                      <div className="w-48 h-48 rounded-full bg-white/15 border border-white/20 flex items-center justify-center text-white text-3xl font-bold shadow-lg mb-4 relative z-10 shrink-0">
+                      <div className="w-48 h-56 rounded-3xl bg-white/15 border border-white/20 flex items-center justify-center text-white text-3xl font-bold shadow-lg mb-4 relative z-10 shrink-0">
                         {member.initials}
                       </div>
                     )}
