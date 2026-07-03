@@ -1,18 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { 
-  FileText, 
-  Download, 
-  MapPin, 
-  Phone, 
-  Mail, 
-  Award, 
-  Briefcase, 
-  Building2, 
-  CheckCircle2, 
-  ChevronRight, 
-  Home, 
-  ShieldCheck, 
+import {
+  FileText,
+  Download,
+  MapPin,
+  Phone,
+  Mail,
+  Award,
+  Briefcase,
+  Building2,
+  CheckCircle2,
+  ChevronRight,
+  Home,
+  ShieldCheck,
   X,
   Video,
   FileCheck,
@@ -20,7 +20,7 @@ import {
   Users,
   Settings,
   History,
-  TrendingUp
+  TrendingUp,
 } from "lucide-react";
 import SEO from "@/components/common/SEO";
 import ScrollReveal from "@/components/common/ScrollReveal";
@@ -36,7 +36,7 @@ const boardMembers = [
     bio: "Mr. Mukesh Tibrewala has been driving the strategic direction of Sulit Metals & Alloys for over two decades. His vast experience in procurement and execution of large-scale infrastructure projects has positioned the company as a key player in structural steel supply across the nation.",
     image: "/images/director/mukesh.webp",
     color: "from-[#042D61] to-[#0B2545]",
-    initials: "MT"
+    initials: "MT",
   },
   {
     name: "Mr. Avinash Agarwal",
@@ -46,7 +46,7 @@ const boardMembers = [
     bio: "Mr. Avinash Agarwal brings 18 years of operations expertise. He leads the company's business development strategies, fostering partnerships and managing critical fabrication workflows that ensure client requirements are met on time with highest precision.",
     image: "/images/director/avinash.webp",
     color: "from-[#042D61] to-[#0B2545]",
-    initials: "AA"
+    initials: "AA",
   },
   {
     name: "Mr. Abhishek Agarwal",
@@ -57,8 +57,8 @@ const boardMembers = [
     bio: "Mr. Abhishek Agarwal oversees technological advancements and quality control at the manufacturing plants. Under his leadership, the company has integrated state-of-the-art CNC processes to manufacture critical bridge girders and heavy structural components.",
     image: "/images/director/abhishek.webp",
     color: "from-[#042D61] to-[#0B2545]",
-    initials: "AA"
-  }
+    initials: "AA",
+  },
 ];
 
 // Gallery Images
@@ -66,23 +66,23 @@ const galleryImages = [
   {
     src: "/images/Projects/cantonment fob/cantonment fob (1).webp",
     alt: "Cantonment Foot Over Bridge (FOB)",
-    tag: "Foot Over Bridge"
+    tag: "Foot Over Bridge",
   },
   {
     src: "/images/Projects/cantonment fob/cantonment fob (2).webp",
     alt: "Structural Steel Joint Assembly",
-    tag: "Heavy Fabrication"
+    tag: "Heavy Fabrication",
   },
   {
     src: "/images/Projects/hebbal flyover ROB/hebbal flyover ROB (1).webp",
     alt: "Hebbal Flyover Railway Over Bridge (ROB)",
-    tag: "Railway ROB"
+    tag: "Railway ROB",
   },
   {
     src: "/images/Projects/hebbal flyover ROB/hebbal flyover ROB (2).webp",
     alt: "Steel Girder Assembly & Inspection",
-    tag: "Testing & Erection"
-  }
+    tag: "Testing & Erection",
+  },
 ];
 
 // Video Showcase
@@ -90,138 +90,166 @@ const videos = [
   {
     id: "video1",
     title: "Corporate Overview & Production Facility Walkthrough",
-    description: "Take a virtual tour of our state-of-the-art heavy steel fabrication facility and production capacity.",
+    description:
+      "Take a virtual tour of our state-of-the-art heavy steel fabrication facility and production capacity.",
     thumbnail: "/images/Projects/cantonment fob/cantonment fob (3).webp",
     duration: "4:15",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   },
   {
     id: "video2",
     title: "RDSO Quality Testing Standards & Fabrication Process",
-    description: "Deep dive into our NABL allied laboratory testing, ultrasonic examinations, and CNC plate drilling processes.",
-    thumbnail: "/images/Projects/hebbal flyover ROB/hebbal flyover ROB (3).webp",
+    description:
+      "Deep dive into our NABL allied laboratory testing, ultrasonic examinations, and CNC plate drilling processes.",
+    thumbnail:
+      "/images/Projects/hebbal flyover ROB/hebbal flyover ROB (3).webp",
     duration: "6:30",
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  }
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  },
 ];
 
 // Official Documents List
 const approvalsAndRegistrations = [
   {
     title: "RDSO Approval Letter",
-    fileName: "RDSO Approve Letter.pdf",
-    path: "/docs/RDSO Approve Letter.pdf",
+    fileName: "RDSO_Approve_Letter.pdf",
+    path: "/docs/approvals/RDSO_Approve_Letter.pdf",
     size: "91 KB",
     type: "Approval",
-    details: "Research Designs and Standards Organisation (RDSO) official approval letter for structural steel fabrication."
+    details:
+      "Research Designs and Standards Organisation (RDSO) official approval letter for structural steel fabrication.",
   },
   {
     title: "ISO 9001 Certificate",
-    fileName: "ISO Certificate.pdf",
-    path: "/docs/sulit website documents/ISO Certificate.pdf",
+    fileName: "ISO_Certificate.pdf",
+    path: "/docs/approvals/ISO_Certificate.pdf",
     size: "152 KB",
     type: "Compliance",
-    details: "ISO 9001:2015 Certification validating our Quality Management System (QMS)."
+    details:
+      "ISO 9001:2015 Certification validating our Quality Management System (QMS).",
   },
   {
     title: "Factory License (2026-2040)",
-    fileName: "Renewed License 2026-2040 .pdf",
-    path: "/docs/sulit website documents/Renewed License 2026-2040 .pdf",
+    fileName: "Factory_License.pdf",
+    path: "/docs/approvals/Factory_License.pdf",
     size: "83 KB",
     type: "License",
-    details: "Officially renewed factory operating license valid from 2026 up to 2040."
+    details:
+      "Officially renewed factory operating license valid from 2026 up to 2040.",
   },
   {
     title: "Certificate of Incorporation",
-    fileName: "CERTIFICATE OF INCORPORATION.PDF",
-    path: "/docs/CERTIFICATE OF INCORPORATION.PDF",
+    fileName: "Certificate_of_Incorporation.pdf",
+    path: "/docs/approvals/Certificate_of_Incorporation.pdf",
     size: "537 KB",
     type: "Registration",
-    details: "Official Certificate of Incorporation for Sulit Metals & Alloys Private Ltd."
+    details:
+      "Official Certificate of Incorporation for Sulit Metals & Alloys Private Ltd.",
   },
   {
     title: "Memorandum of Association (MOA)",
     fileName: "MOA.pdf",
-    path: "/docs/MOA.pdf",
+    path: "/docs/approvals/MOA.pdf",
     size: "5.9 MB",
     type: "Constitutional",
-    details: "Memorandum of Association detailing the company's constitution and scope."
+    details:
+      "Memorandum of Association detailing the company's constitution and scope.",
   },
   {
     title: "Articles of Association (AOA)",
     fileName: "AOA.pdf",
-    path: "/docs/AOA.pdf",
+    path: "/docs/approvals/AOA.pdf",
     size: "9.6 MB",
     type: "Constitutional",
-    details: "Articles of Association governing the internal management of the company."
+    details:
+      "Articles of Association governing the internal management of the company.",
   },
   {
     title: "Firm GST Registration Certificate",
-    fileName: "Sulit Gst Cetificate.pdf",
-    path: "/docs/sulit website documents/Sulit Gst Cetificate.pdf",
+    fileName: "GST_Certificate.pdf",
+    path: "/docs/approvals/GST_Certificate.pdf",
     size: "603 KB",
     type: "Registration",
-    details: "Sulit Metals & Alloys Private Ltd. Goods and Services Tax registration credentials."
+    details:
+      "Sulit Metals & Alloys Private Ltd. Goods and Services Tax registration credentials.",
   },
   {
     title: "Board of Directors Registration",
     fileName: "Board_of_Directors_Registration.pdf",
-    path: "/docs/Board_of_Directors_Registration.pdf",
+    path: "/docs/approvals/Board_of_Directors_Registration.pdf",
     size: "309 KB",
     type: "Registration",
-    details: "Official Board of Directors registry and corporate governance details."
+    details:
+      "Official Board of Directors registry and corporate governance details.",
   },
   {
     title: "Partnership Deed",
     fileName: "Partnership_Deed.pdf",
-    path: "/docs/Partnership_Deed.pdf",
+    path: "/docs/approvals/Partnership_Deed.pdf",
     size: "297 KB",
     type: "Agreement",
-    details: "Partnership deed agreement credentials of Sulit Metals & Alloys."
+    details: "Partnership deed agreement credentials of Sulit Metals & Alloys.",
   },
   {
     title: "Corporate MoU",
-    fileName: "MOU- SMAPL s.pdf",
-    path: "/docs/sulit website documents/MOU- SMAPL s.pdf",
+    fileName: "Corporate_MoU.pdf",
+    path: "/docs/approvals/Corporate_MoU.pdf",
     size: "802 KB",
     type: "Agreement",
-    details: "Memorandum of Understanding (MoU) defining corporate and partnership guidelines."
-  }
+    details:
+      "Memorandum of Understanding (MoU) defining corporate and partnership guidelines.",
+  },
 ];
 
 // Infrastructure Assets
 const infrastructureAssets = {
-  powerDemand: "Power demand & installed power supply fully optimized for massive automated machinery and CNC drilling operations.",
+  powerDemand:
+    "Power demand & installed power supply fully optimized for massive automated machinery and CNC drilling operations.",
   shops: [
-    { name: "Template Layout Area", desc: "Dedicated precision marking and templating zone for layout accuracy." },
-    { name: "Fabrication Shop", desc: "Equipped for cutting, CNC drilling, welding, straightening, and end milling." },
-    { name: "Blasting Shop", desc: "Heavy-duty shot/sand blasting area for structural steel surface preparation." },
-    { name: "Metalizing & Painting Shop", desc: "Climate-controlled corrosion control and high-performance painting zone." },
-    { name: "Assembly & Stacking Areas", desc: "Systematic layout for component trial-assembly and structural storage." }
+    {
+      name: "Template Layout Area",
+      desc: "Dedicated precision marking and templating zone for layout accuracy.",
+    },
+    {
+      name: "Fabrication Shop",
+      desc: "Equipped for cutting, CNC drilling, welding, straightening, and end milling.",
+    },
+    {
+      name: "Blasting Shop",
+      desc: "Heavy-duty shot/sand blasting area for structural steel surface preparation.",
+    },
+    {
+      name: "Metalizing & Painting Shop",
+      desc: "Climate-controlled corrosion control and high-performance painting zone.",
+    },
+    {
+      name: "Assembly & Stacking Areas",
+      desc: "Systematic layout for component trial-assembly and structural storage.",
+    },
   ],
   documents: [
     {
       title: "Machinery & Plants List",
-      fileName: "Sulit Machinery.pdf",
-      path: "/docs/sulit website documents/Sulit Machinery.pdf",
+      fileName: "Sulit_Machinery.pdf",
+      path: "/docs/machinery/Sulit_Machinery.pdf",
       size: "670 KB",
-      actionLabel: "View Machinery List"
+      actionLabel: "View Machinery List",
     },
     {
       title: "Factory Layout Blueprint",
-      fileName: "FACTORY LAYOUT (2).pdf",
-      path: "/docs/sulit website documents/FACTORY LAYOUT (2).pdf",
+      fileName: "Factory_Layout.pdf",
+      path: "/docs/machinery/Factory_Layout.pdf",
       size: "88 KB",
-      actionLabel: "View Factory Layout"
+      actionLabel: "View Factory Layout",
     },
     {
       title: "Power Allocation Details",
-      fileName: "POWER DETAILES.pdf",
-      path: "/docs/POWER DETAILES.pdf",
+      fileName: "Power_Details.pdf",
+      path: "/docs/machinery/Power_Details.pdf",
       size: "PDF Doc",
-      actionLabel: "View Power Details"
-    }
-  ]
+      actionLabel: "View Power Details",
+    },
+  ],
 };
 
 // Welders & Artisans Certifications
@@ -230,96 +258,102 @@ const artisansCertifications = [
     name: "Abhisek Chaubey",
     role: "Welder / Inspector",
     details: "Qualified under RDSO guidelines. Certified training inspector.",
-    fileName: "Abhisek chaubey.pdf",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/Abhisek chaubey.pdf",
-    size: "975 KB"
+    fileName: "Abhisek_chaubey.pdf",
+    path: "/docs/artisans/Abhisek_chaubey.pdf",
+    size: "975 KB",
   },
   {
     name: "Dheeraj Kumar",
     role: "Welder / Inspector",
     details: "RDSO-compliant welder training and certification records.",
-    fileName: "Dheeraj Kumar.pdf",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/Dheeraj Kumar.pdf",
-    size: "1.9 MB"
+    fileName: "Dheeraj_Kumar.pdf",
+    path: "/docs/artisans/Dheeraj_Kumar.pdf",
+    size: "1.9 MB",
   },
   {
     name: "Ramesh Ray",
     role: "Welding Operator",
-    details: "Weld qualification test certification according to structural bridge norms.",
-    fileName: "Ramesh Ray.pdf",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/Ramesh Ray.pdf",
-    size: "948 KB"
+    details:
+      "Weld qualification test certification according to structural bridge norms.",
+    fileName: "Ramesh_Ray.pdf",
+    path: "/docs/artisans/Ramesh_Ray.pdf",
+    size: "948 KB",
   },
   {
     name: "Ravi Chauhan",
     role: "Welding Operator",
     details: "Heavy metal welding qualification records.",
-    fileName: "Ravi Chauhan.pdf",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/Ravi Chauhan.pdf",
-    size: "959 KB"
+    fileName: "Ravi_Chauhan.pdf",
+    path: "/docs/artisans/Ravi_Chauhan.pdf",
+    size: "959 KB",
   },
   {
     name: "SurajBhan Singh",
     role: "Welder",
-    details: "Certified structural steel welder, specialized in sub-arc welding.",
-    fileName: "SurajBhan singh.pdf",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/SurajBhan singh.pdf",
-    size: "971 KB"
+    details:
+      "Certified structural steel welder, specialized in sub-arc welding.",
+    fileName: "SurajBhan_singh.pdf",
+    path: "/docs/artisans/SurajBhan_singh.pdf",
+    size: "971 KB",
   },
   {
     name: "Yashveer",
     role: "CNC Drilling Operator",
-    details: "4 Years of Experience in high-capacity plate drilling operations.",
-    fileName: "YASHVEER CNC DRILLING OPERATOR EXPERIENCE 4 YEARS.jpeg",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/YASHVEER CNC DRILLING OPERATOR EXPERIENCE 4 YEARS.jpeg",
-    size: "468 KB"
+    details:
+      "4 Years of Experience in high-capacity plate drilling operations.",
+    fileName: "Yashveer_CNC_Drilling.jpeg",
+    path: "/docs/artisans/Yashveer_CNC_Drilling.jpeg",
+    size: "468 KB",
   },
   {
     name: "Blasting & Painting Specialist",
     role: "Blaster & Painter",
-    details: "7 Years of Experience in surface blasting and high-durability metalizing.",
-    fileName: "BLASTING PERSON 7 YEARS EXPERIENCE AS  A PAINTER & BLASTER.jpeg",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/BLASTING PERSON 7 YEARS EXPERIENCE AS  A PAINTER & BLASTER.jpeg",
-    size: "182 KB"
+    details:
+      "7 Years of Experience in surface blasting and high-durability metalizing.",
+    fileName: "Blasting_Painting_Specialist.jpeg",
+    path: "/docs/artisans/Blasting_Painting_Specialist.jpeg",
+    size: "182 KB",
   },
   {
     name: "CNC Cutting Specialist",
     role: "CNC Operator",
     details: "Certified CNC profile plate cutting specialist.",
-    fileName: "CNC CUTTING OPERATOR.jpeg",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/CNC CUTTING OPERATOR.jpeg",
-    size: "172 KB"
+    fileName: "CNC_Cutting_Specialist.jpeg",
+    path: "/docs/artisans/CNC_Cutting_Specialist.jpeg",
+    size: "172 KB",
   },
   {
     name: "Painting Specialist",
     role: "Industrial Painter",
     details: "Expertise in metal protective coatings and paint inspections.",
-    fileName: "PAINTER.jpeg",
-    path: "/docs/sulit website documents/WELDER & WELDING INSPECTOR TRAINING CERTIFICATE/PAINTER.jpeg",
-    size: "107 KB"
-  }
+    fileName: "Painting_Specialist.jpeg",
+    path: "/docs/artisans/Painting_Specialist.jpeg",
+    size: "107 KB",
+  },
 ];
 
 // Project Track Record Documents
 const projectTrackRecord = [
   {
     title: "Executed Works & Supplies (Last 5 Years)",
-    description: "Detailed sheet showing completed structural contracts, tonnages, and client verifications.",
-    excelName: "EXECUTED PROJECT revised .xlsx",
-    excelPath: "/docs/sulit website documents/EXECUTED PROJECT revised .xlsx",
-    pdfName: "EXCUTED PROJECT.pdf",
-    pdfPath: "/docs/EXCUTED PROJECT.pdf",
-    size: "15 KB"
+    description:
+      "Detailed sheet showing completed structural contracts, tonnages, and client verifications.",
+    excelName: "Executed_Projects.xlsx",
+    excelPath: "/docs/projects/Executed_Projects.xlsx",
+    pdfName: "Executed_Projects.pdf",
+    pdfPath: "/docs/projects/Executed_Projects.pdf",
+    size: "15 KB",
   },
   {
     title: "Projects in Hand Details",
-    description: "List of active fabrication and erection works currently under execution.",
-    excelName: "IN HAND  PROJECT DETAILS .xlsx",
-    excelPath: "/docs/sulit website documents/IN HAND  PROJECT DETAILS .xlsx",
-    pdfName: "IN HAND PROJECT.pdf",
-    pdfPath: "/docs/IN HAND PROJECT.pdf",
-    size: "13 KB"
-  }
+    description:
+      "List of active fabrication and erection works currently under execution.",
+    excelName: "In_Hand_Projects.xlsx",
+    excelPath: "/docs/projects/In_Hand_Projects.xlsx",
+    pdfName: "In_Hand_Projects.pdf",
+    pdfPath: "/docs/projects/In_Hand_Projects.pdf",
+    size: "13 KB",
+  },
 ];
 
 export default function RDSOPage() {
@@ -327,11 +361,11 @@ export default function RDSOPage() {
   const [activeTab, setActiveTab] = useState<string>("approvals");
 
   // Find the selected video data
-  const selectedVideo = videos.find(v => v.id === activeVideo);
+  const selectedVideo = videos.find((v) => v.id === activeVideo);
 
   return (
     <div className="bg-slate-50 min-h-screen text-slate-800">
-      <SEO 
+      <SEO
         title="Government Vendor Approval (RDSO) Portal | SMAPL"
         description="Official RDSO Vendor Approval repository and Board of Directors directory for Sulit Metals & Alloys Private Ltd. Access official certificates, layout, welder credentials, and audits."
         keywords="RDSO Approval, Government Steel Vendor, Sulit Metals, Mukesh Tibrewala, Abhishek Agarwal, Railway ROB, Steel Girders, Welder Training Certificate, Factory License, ISO Certificate, GST, Executed Projects"
@@ -342,7 +376,7 @@ export default function RDSOPage() {
         {/* Background Decorative Grid */}
         <div className="absolute inset-0 opacity-15 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#08182F] via-[#0B2545]/90 to-transparent" />
-        
+
         {/* Abstract shapes */}
         <div className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl" />
         <div className="absolute -bottom-20 left-10 w-80 h-80 rounded-full bg-[#C5A880]/10 blur-2xl" />
@@ -350,18 +384,24 @@ export default function RDSOPage() {
         <div className="max-w-7xl mx-auto px-6 relative z-10">
           <ScrollReveal direction="up" className="max-w-3xl">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#C5A880]/20 text-[#C5A880] border border-[#C5A880]/30 mb-6 uppercase tracking-wider">
-              <ShieldCheck className="w-3.5 h-3.5" /> Official Vendor Credentials
+              <ShieldCheck className="w-3.5 h-3.5" /> Official Vendor
+              Credentials
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
               RDSO Vendor Approval <br />
               <span className="text-[#C5A880]">Portal & Governance</span>
             </h1>
             <p className="mt-4 text-slate-300 text-lg md:text-xl max-w-2xl leading-relaxed">
-              Sulit Metals & Alloys Private Ltd. is committed to upholding strict compliance, state-of-the-art infrastructure standards, and official government verifications.
+              Sulit Metals & Alloys Private Ltd. is committed to upholding
+              strict compliance, state-of-the-art infrastructure standards, and
+              official government verifications.
             </p>
 
             <nav className="flex items-center gap-2 mt-8 text-sm text-slate-400">
-              <Link to="/" className="flex items-center gap-1 hover:text-white transition-colors">
+              <Link
+                to="/"
+                className="flex items-center gap-1 hover:text-white transition-colors"
+              >
                 <Home className="w-4 h-4" />
                 Home
               </Link>
@@ -377,18 +417,28 @@ export default function RDSOPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center divide-y md:divide-y-0 md:divide-x divide-slate-200">
             <div className="py-2 md:py-0">
-              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">Approved Authority</span>
-              <span className="text-slate-900 font-extrabold text-lg md:text-xl">RDSO (Ministry of Railways)</span>
+              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">
+                Approved Authority
+              </span>
+              <span className="text-slate-900 font-extrabold text-lg md:text-xl">
+                RDSO (Ministry of Railways)
+              </span>
             </div>
             <div className="py-2 md:py-0">
-              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">Status</span>
+              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">
+                Status
+              </span>
               <span className="text-green-600 font-extrabold text-lg md:text-xl inline-flex items-center gap-1.5">
                 <CheckCircle2 className="w-5 h-5 shrink-0" /> Verified Vendor
               </span>
             </div>
             <div className="py-2 md:py-0">
-              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">Quality Certification</span>
-              <span className="text-slate-900 font-extrabold text-lg md:text-xl">ISO 9001:2015 Compliance</span>
+              <span className="text-slate-500 text-xs font-bold uppercase tracking-wider block mb-1">
+                Quality Certification
+              </span>
+              <span className="text-slate-900 font-extrabold text-lg md:text-xl">
+                ISO 9001:2015 Compliance
+              </span>
             </div>
           </div>
         </div>
@@ -396,12 +446,21 @@ export default function RDSOPage() {
 
       {/* Main Tabbed Portal Section */}
       <section className="max-w-7xl mx-auto px-6 py-16">
-        <ScrollReveal direction="up" className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs font-extrabold text-[#042D61] uppercase tracking-widest block mb-2">Compliance Dashboard</span>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#08182F]">Official RDSO Vendor Audit Files</h2>
+        <ScrollReveal
+          direction="up"
+          className="text-center max-w-3xl mx-auto mb-12"
+        >
+          <span className="text-xs font-extrabold text-[#042D61] uppercase tracking-widest block mb-2">
+            Compliance Dashboard
+          </span>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#08182F]">
+            Official RDSO Vendor Audit Files
+          </h2>
           <div className="h-1.5 w-24 bg-[#C5A880] mx-auto mt-3 rounded-full" />
           <p className="mt-3 text-slate-600 text-sm">
-            Access structural blueprints, licenses, welder certifications, NABL testing alliance records, and project sheets required for government vendor inspections.
+            Access structural blueprints, licenses, welder certifications, NABL
+            testing alliance records, and project sheets required for government
+            vendor inspections.
           </p>
         </ScrollReveal>
 
@@ -453,26 +512,49 @@ export default function RDSOPage() {
 
         {/* Tab 1: Approvals & Registrations */}
         {activeTab === "approvals" && (
-          <ScrollReveal direction="none" className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ScrollReveal
+            direction="none"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {approvalsAndRegistrations.map((doc) => (
-              <div key={doc.title} className="group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-[#042D61] hover:shadow-md transition-all h-full">
+              <div
+                key={doc.title}
+                className="group bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between hover:border-[#042D61] hover:shadow-md transition-all h-full"
+              >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-11 h-11 rounded-xl bg-red-50 text-red-600 flex items-center justify-center border border-red-100 group-hover:bg-red-100 transition-colors">
                       <FileText className="w-5 h-5" />
                     </div>
-                    <span className="text-slate-400 text-xs font-semibold">{doc.size}</span>
+                    <span className="text-slate-400 text-xs font-semibold">
+                      {doc.size}
+                    </span>
                   </div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">{doc.type}</span>
+                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                    {doc.type}
+                  </span>
                   <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#042D61] transition-colors leading-snug mb-3">
                     {doc.title}
                   </h3>
-                  <p className="text-slate-500 text-xs leading-relaxed mb-4">{doc.details}</p>
+                  <p className="text-slate-500 text-xs leading-relaxed mb-4">
+                    {doc.details}
+                  </p>
                 </div>
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-slate-500 truncate max-w-[130px]">{doc.fileName}</span>
-                  <Button variant="outline" size="sm" className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs" asChild>
-                    <a href={doc.path} target="_blank" rel="noopener noreferrer">
+                  <span className="text-[10px] font-mono text-slate-500 truncate max-w-[130px]">
+                    {doc.fileName}
+                  </span>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs"
+                    asChild
+                  >
+                    <a
+                      href={doc.path}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Download className="w-3.5 h-3.5" /> View File
                     </a>
                   </Button>
@@ -491,25 +573,36 @@ export default function RDSOPage() {
               <div className="lg:col-span-8 space-y-6">
                 <div className="bg-white rounded-3xl p-8 border border-slate-200">
                   <h3 className="text-xl font-bold text-[#08182F] mb-4 flex items-center gap-2">
-                    <Zap className="w-5 h-5 text-[#C5A880]" /> Power Demand & Installed Capacity
+                    <Zap className="w-5 h-5 text-[#C5A880]" /> Power Demand &
+                    Installed Capacity
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
                     {infrastructureAssets.powerDemand}
                   </p>
                   <p className="text-slate-500 text-xs leading-relaxed">
-                    Our manufacturing unit maintains an independent substation linkage ensuring zero disruption during heavy high-amp structural sub-arc welding.
+                    Our manufacturing unit maintains an independent substation
+                    linkage ensuring zero disruption during heavy high-amp
+                    structural sub-arc welding.
                   </p>
                 </div>
 
                 <div className="bg-white rounded-3xl p-8 border border-slate-200">
                   <h3 className="text-xl font-bold text-[#08182F] mb-6 flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication Shops Overview
+                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication
+                    Shops Overview
                   </h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {infrastructureAssets.shops.map((shop) => (
-                      <div key={shop.name} className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                        <h4 className="font-bold text-sm text-slate-800 mb-1">{shop.name}</h4>
-                        <p className="text-xs text-slate-500 leading-normal">{shop.desc}</p>
+                      <div
+                        key={shop.name}
+                        className="p-4 rounded-xl bg-slate-50 border border-slate-100"
+                      >
+                        <h4 className="font-bold text-sm text-slate-800 mb-1">
+                          {shop.name}
+                        </h4>
+                        <p className="text-xs text-slate-500 leading-normal">
+                          {shop.desc}
+                        </p>
                       </div>
                     ))}
                   </div>
@@ -519,7 +612,10 @@ export default function RDSOPage() {
               {/* Right file download column */}
               <div className="lg:col-span-4 space-y-6">
                 {infrastructureAssets.documents.map((doc) => (
-                  <div key={doc.title} className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-[180px] shadow-sm hover:shadow-md transition-shadow">
+                  <div
+                    key={doc.title}
+                    className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-[180px] shadow-sm hover:shadow-md transition-shadow"
+                  >
                     <div className="flex items-center justify-between">
                       <div className="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center border border-red-100">
                         <FileText className="w-5 h-5" />
@@ -527,12 +623,26 @@ export default function RDSOPage() {
                       <span className="text-slate-400 text-xs">{doc.size}</span>
                     </div>
                     <div className="mt-2">
-                      <h4 className="font-bold text-[#08182F] text-base">{doc.title}</h4>
-                      <span className="text-[10px] text-slate-400 truncate block mt-0.5">{doc.fileName}</span>
+                      <h4 className="font-bold text-[#08182F] text-base">
+                        {doc.title}
+                      </h4>
+                      <span className="text-[10px] text-slate-400 truncate block mt-0.5">
+                        {doc.fileName}
+                      </span>
                     </div>
-                    <Button variant="outline" size="sm" className="w-full mt-4 border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1.5 font-semibold text-xs" asChild>
-                      <a href={doc.path} target="_blank" rel="noopener noreferrer">
-                        <Download className="w-3.5 h-3.5" /> {doc.actionLabel || "View File"}
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full mt-4 border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1.5 font-semibold text-xs"
+                      asChild
+                    >
+                      <a
+                        href={doc.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Download className="w-3.5 h-3.5" />{" "}
+                        {doc.actionLabel || "View File"}
                       </a>
                     </Button>
                   </div>
@@ -547,15 +657,27 @@ export default function RDSOPage() {
           <ScrollReveal direction="none" className="space-y-6">
             <div className="bg-white rounded-3xl p-6 border border-slate-200 mb-6">
               <h3 className="text-lg font-bold text-slate-900 mb-2 flex items-center gap-2">
-                <Users className="w-5 h-5 text-[#C5A880]" /> Organisation Chart Qualification
+                <Users className="w-5 h-5 text-[#C5A880]" /> Organisation Chart
+                Qualification
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed max-w-3xl mb-4">
-                We maintain active qualification logs and training credentials of all artisans, weld operators, and safety supervisors in full compliance with RDSO vendor guidelines.
+                We maintain active qualification logs and training credentials
+                of all artisans, weld operators, and safety supervisors in full
+                compliance with RDSO vendor guidelines.
               </p>
               <div className="flex flex-col sm:flex-row items-center gap-3">
-                <Button variant="outline" className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl font-semibold text-xs" asChild>
-                  <a href="/docs/organization chart.pdf" target="_blank" rel="noopener noreferrer">
-                    <Download className="w-3.5 h-3.5" /> View Official Organisation Chart (PDF)
+                <Button
+                  variant="outline"
+                  className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl font-semibold text-xs"
+                  asChild
+                >
+                  <a
+                    href="/docs/artisans/Organization_Chart.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> View Official
+                    Organisation Chart (PDF)
                   </a>
                 </Button>
               </div>
@@ -563,18 +685,36 @@ export default function RDSOPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {artisansCertifications.map((artisan) => (
-                <div key={artisan.name} className="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col justify-between hover:shadow-md transition-shadow">
+                <div
+                  key={artisan.name}
+                  className="bg-white rounded-2xl border border-slate-200 p-5 flex flex-col justify-between hover:shadow-md transition-shadow"
+                >
                   <div>
                     <span className="inline-block text-[9px] font-extrabold text-[#C5A880] uppercase tracking-wider bg-[#C5A880]/15 px-2 py-0.5 rounded border border-[#C5A880]/20 mb-2">
                       {artisan.role}
                     </span>
-                    <h4 className="font-extrabold text-base text-slate-900">{artisan.name}</h4>
-                    <p className="text-xs text-slate-500 leading-normal mt-1 mb-4">{artisan.details}</p>
+                    <h4 className="font-extrabold text-base text-slate-900">
+                      {artisan.name}
+                    </h4>
+                    <p className="text-xs text-slate-500 leading-normal mt-1 mb-4">
+                      {artisan.details}
+                    </p>
                   </div>
                   <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
-                    <span className="text-[9px] font-mono text-slate-400 truncate max-w-[140px]">{artisan.fileName}</span>
-                    <Button variant="outline" size="sm" className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 text-[11px] font-semibold h-7 px-2.5" asChild>
-                      <a href={artisan.path} target="_blank" rel="noopener noreferrer">
+                    <span className="text-[9px] font-mono text-slate-400 truncate max-w-[140px]">
+                      {artisan.fileName}
+                    </span>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 text-[11px] font-semibold h-7 px-2.5"
+                      asChild
+                    >
+                      <a
+                        href={artisan.path}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Download className="w-3 h-3" /> View Credentials
                       </a>
                     </Button>
@@ -587,31 +727,61 @@ export default function RDSOPage() {
 
         {/* Tab 4: Executed & In-Hand Works */}
         {activeTab === "projects" && (
-          <ScrollReveal direction="none" className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <ScrollReveal
+            direction="none"
+            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          >
             {projectTrackRecord.map((track) => (
-              <div key={track.title} className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-auto hover:shadow-md transition-shadow">
+              <div
+                key={track.title}
+                className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between h-auto hover:shadow-md transition-shadow"
+              >
                 <div>
                   <div className="flex items-center justify-between mb-4">
                     <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100">
                       <TrendingUp className="w-5 h-5" />
                     </div>
-                    <span className="text-slate-400 text-xs font-semibold">{track.size}</span>
+                    <span className="text-slate-400 text-xs font-semibold">
+                      {track.size}
+                    </span>
                   </div>
-                  <h3 className="font-bold text-slate-900 text-lg mb-1 leading-snug">{track.title}</h3>
-                  <p className="text-slate-500 text-xs leading-normal mb-4">{track.description}</p>
+                  <h3 className="font-bold text-slate-900 text-lg mb-1 leading-snug">
+                    {track.title}
+                  </h3>
+                  <p className="text-slate-500 text-xs leading-normal mb-4">
+                    {track.description}
+                  </p>
                 </div>
                 <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center gap-2 justify-between">
                   <span className="text-[10px] font-mono text-slate-400 truncate max-w-[150px] self-start sm:self-center">
                     {track.pdfName}
                   </span>
                   <div className="flex items-center gap-2 w-full sm:w-auto">
-                    <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs h-8" asChild>
-                      <a href={track.pdfPath} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 sm:flex-initial border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs h-8"
+                      asChild
+                    >
+                      <a
+                        href={track.pdfPath}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         View PDF
                       </a>
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1 sm:flex-initial border-slate-300 text-slate-700 hover:bg-slate-50 rounded-xl gap-1 font-semibold text-xs h-8" asChild>
-                      <a href={track.excelPath} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="flex-1 sm:flex-initial border-slate-300 text-slate-700 hover:bg-slate-50 rounded-xl gap-1 font-semibold text-xs h-8"
+                      asChild
+                    >
+                      <a
+                        href={track.excelPath}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         Excel
                       </a>
                     </Button>
@@ -650,14 +820,16 @@ export default function RDSOPage() {
               <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   {/* Profile Image Column */}
-                  <div className={`lg:col-span-4 bg-gradient-to-br ${member.color} text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden min-h-[300px]`}>
+                  <div
+                    className={`lg:col-span-4 bg-gradient-to-br ${member.color} text-white flex flex-col items-center justify-center p-8 md:p-12 relative overflow-hidden min-h-[300px]`}
+                  >
                     <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]" />
-                    
+
                     {/* Stylized monogram avatar or Director image */}
                     {member.image ? (
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
+                      <img
+                        src={member.image}
+                        alt={member.name}
                         className="w-48 h-56 rounded-3xl object-cover border-4 border-white/20 shadow-lg mb-4 relative z-10 shrink-0"
                       />
                     ) : (
@@ -665,8 +837,10 @@ export default function RDSOPage() {
                         {member.initials}
                       </div>
                     )}
-                    
-                    <h3 className="text-2xl font-bold relative z-10 text-center">{member.name}</h3>
+
+                    <h3 className="text-2xl font-bold relative z-10 text-center">
+                      {member.name}
+                    </h3>
                     <span className="text-[#C5A880] font-semibold text-xs mt-1 px-3.5 py-1 bg-white/10 rounded-full relative z-10 uppercase tracking-wider text-center leading-normal">
                       {member.role}
                     </span>
@@ -676,7 +850,8 @@ export default function RDSOPage() {
                   <div className="lg:col-span-8 p-8 md:p-12 flex flex-col justify-between">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
-                        <Award className="text-[#C5A880] w-5 h-5 shrink-0" /> Executive Profile
+                        <Award className="text-[#C5A880] w-5 h-5 shrink-0" />{" "}
+                        Executive Profile
                       </h4>
                       <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-6">
                         {member.bio}
@@ -686,7 +861,8 @@ export default function RDSOPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
                       <div>
                         <span className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                          <Briefcase className="w-4 h-4 text-[#C5A880]" /> Track Record
+                          <Briefcase className="w-4 h-4 text-[#C5A880]" /> Track
+                          Record
                         </span>
                         <p className="text-sm font-semibold text-slate-800 leading-normal">
                           {member.experience}
@@ -694,7 +870,8 @@ export default function RDSOPage() {
                       </div>
                       <div>
                         <span className="flex items-center gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                          <Building2 className="w-4 h-4 text-[#C5A880]" /> Key Expertise
+                          <Building2 className="w-4 h-4 text-[#C5A880]" /> Key
+                          Expertise
                         </span>
                         <p className="text-sm font-semibold text-slate-800 leading-normal text-wrap">
                           {member.expertise}
@@ -978,7 +1155,7 @@ export default function RDSOPage() {
                   {selectedVideo.title}
                 </h3>
               </div>
-              <button 
+              <button
                 onClick={() => setActiveVideo(null)}
                 className="p-1 rounded-full text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
                 aria-label="Close video player"
@@ -1000,8 +1177,12 @@ export default function RDSOPage() {
 
             {/* Modal Footer Info */}
             <div className="px-6 py-4 bg-slate-950 text-slate-400 text-xs md:text-sm flex flex-col md:flex-row items-center justify-between gap-4 border-t border-slate-800">
-              <span className="font-semibold text-[#C5A880]">Sulit Metals & Alloys Private Ltd.</span>
-              <span>HD Streaming Presentation &bull; {selectedVideo.duration} mins</span>
+              <span className="font-semibold text-[#C5A880]">
+                Sulit Metals & Alloys Private Ltd.
+              </span>
+              <span>
+                HD Streaming Presentation &bull; {selectedVideo.duration} mins
+              </span>
             </div>
           </div>
         </div>

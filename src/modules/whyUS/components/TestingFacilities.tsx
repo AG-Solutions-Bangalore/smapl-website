@@ -90,22 +90,22 @@ const facilitiesList = [
       "Spindle Speeds": "16 steps (25 - 2000 RPM)",
     },
   },
-  {
-    title: "Integrated CNC H-Beam Drilling & Sawing",
-    category: "Machining & Cutting",
-    description:
-      "Automated structural beam line doing multi-axis drilling and mitre cutting in a single pass.",
-    image: "/images/whyus/6.webp",
-    tag: "H-Beam Line",
-    longDescription:
-      "The backbone of our structural fabrication shop, this integrated CNC line drills holes on three faces of structural beams in one pass, followed immediately by clean mitre-cut sizing. This minimizes material handling and guarantees absolute geometric precision.",
-    specs: {
-      "Max Beam Size": "1000mm x 500mm (Web x Flange)",
-      "Drilling Axes": "3 Axes (Web and both Flanges simultaneously)",
-      "Sawing Angle": "Up to 60 degrees (Mitre)",
-      "Length Measuring": "Laser-guided servo encoder",
-    },
-  },
+  // {
+  //   title: "Integrated CNC H-Beam Drilling & Sawing",
+  //   category: "Machining & Cutting",
+  //   description:
+  //     "Automated structural beam line doing multi-axis drilling and mitre cutting in a single pass.",
+  //   image: "/images/whyus/6.webp",
+  //   tag: "H-Beam Line",
+  //   longDescription:
+  //     "The backbone of our structural fabrication shop, this integrated CNC line drills holes on three faces of structural beams in one pass, followed immediately by clean mitre-cut sizing. This minimizes material handling and guarantees absolute geometric precision.",
+  //   specs: {
+  //     "Max Beam Size": "1000mm x 500mm (Web x Flange)",
+  //     "Drilling Axes": "3 Axes (Web and both Flanges simultaneously)",
+  //     "Sawing Angle": "Up to 60 degrees (Mitre)",
+  //     "Length Measuring": "Laser-guided servo encoder",
+  //   },
+  // },
 ];
 
 export default function TestingFacilities() {
