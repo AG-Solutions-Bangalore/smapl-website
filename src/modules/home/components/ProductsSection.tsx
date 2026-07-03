@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const products = [
   {
@@ -69,7 +70,7 @@ export default function ProductsSection() {
             VIEW ALL PRODUCTS
           </Link>
         </ScrollReveal>
-
+ 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <ScrollReveal
@@ -82,7 +83,7 @@ export default function ProductsSection() {
             >
               {/* Decorative background glow on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-accent/[0.01] to-accent/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
+ 
               {/* Padded image container with soft gradient background */}
               <div className="w-full aspect-[16/10] bg-gradient-to-b from-slate-50/80 to-slate-100/30 flex items-center justify-center transition-all duration-500 relative z-10 border-b border-slate-100/50 overflow-hidden">
                 {/* Product Badge */}
@@ -93,10 +94,10 @@ export default function ProductsSection() {
                 }`}>
                   {product.tag}
                 </span>
-
+ 
                 <div className="w-full h-full transition-transform duration-500 ease-out transform scale-100 group-hover:scale-105">
                   <LazyLoadImage
-                    src={product.image}
+                    src={getAssetUrl(product.image)}
                     alt={product.name}
                     effect="blur"
                     className="w-full h-full object-cover"

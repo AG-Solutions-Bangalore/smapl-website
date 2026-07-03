@@ -72,7 +72,7 @@ server.listen(0, async () => {
 
       // Navigate to route
       await page.goto(`http://localhost:${PORT}${route}`, {
-        waitUntil: "networkidle0",
+        waitUntil: "domcontentloaded",
         timeout: 30000
       });
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { Project } from "../data/projectsData";
+import { getAssetUrl } from "@/lib/utils";
 
 interface ProjectGalleryModalProps {
   project: Project;
@@ -75,7 +76,7 @@ export default function ProjectGalleryModal({
         {/* Image Display */}
         <div className="w-full h-full flex items-center justify-center select-none overflow-hidden relative">
           <img
-            src={project.images[currentIndex]}
+            src={getAssetUrl(project.images[currentIndex])}
             alt={`${project.name} - View ${currentIndex + 1}`}
             className="max-w-full max-h-[60vh] md:max-h-[70vh] object-contain rounded-lg shadow-2xl animate-fade-in"
           />
@@ -107,7 +108,7 @@ export default function ProjectGalleryModal({
                   }`}
                 >
                   <img
-                    src={image}
+                    src={getAssetUrl(image)}
                     alt={`Thumbnail ${index + 1}`}
                     className="w-full h-full object-cover"
                   />

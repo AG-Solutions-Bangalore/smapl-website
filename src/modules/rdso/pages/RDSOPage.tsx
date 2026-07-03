@@ -25,6 +25,7 @@ import {
 import SEO from "@/components/common/SEO";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { Button } from "@/components/ui/button";
+import { getAssetUrl } from "@/lib/utils";
 
 // Directors Data
 const boardMembers = [
@@ -828,7 +829,7 @@ export default function RDSOPage() {
                     {/* Stylized monogram avatar or Director image */}
                     {member.image ? (
                       <img
-                        src={member.image}
+                        src={getAssetUrl(member.image)}
                         alt={member.name}
                         className="w-48 h-56 rounded-3xl object-cover border-4 border-white/20 shadow-lg mb-4 relative z-10 shrink-0"
                       />
@@ -911,7 +912,7 @@ export default function RDSOPage() {
               <ScrollReveal direction="up" delay={index * 100} key={index}>
                 <div className="group relative rounded-2xl overflow-hidden border border-white/10 aspect-4/3 bg-slate-800 shadow-lg hover:border-[#C5A880]/50 transition-colors">
                   <img
-                    src={image.src}
+                    src={getAssetUrl(image.src)}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

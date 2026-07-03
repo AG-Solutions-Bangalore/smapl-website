@@ -2,6 +2,7 @@ import { Search, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const products = [
   {
@@ -75,7 +76,7 @@ export default function ProductGrid() {
             <div className="w-full aspect-[4/3] overflow-hidden bg-gray-100">
               <div className="w-full h-full transition-transform duration-500 ease-out transform scale-100 group-hover:scale-105">
                 <LazyLoadImage
-                  src={product.image}
+                  src={getAssetUrl(product.image)}
                   alt={product.title}
                   effect="blur"
                   className="w-full h-full object-cover"

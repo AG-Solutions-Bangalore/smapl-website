@@ -2,6 +2,7 @@ import { User, Image as ImageIcon, Layers, Scale } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import type { Project } from "../data/projectsData";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 interface ProjectCardProps {
   project: Project;
@@ -30,7 +31,7 @@ export default function ProjectCard({
         {/* Main Cover Image */}
         <div className="w-full h-full transition-all duration-700 ease-out transform scale-100 group-hover:scale-105 group-hover:brightness-95">
           <LazyLoadImage
-            src={project.images[0]}
+            src={getAssetUrl(project.images[0])}
             alt={project.name}
             effect="blur"
             className="w-full h-full object-cover"
