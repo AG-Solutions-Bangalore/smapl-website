@@ -11,7 +11,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('${getAssetUrl("/images/home/banner.webp")}')`,
+          backgroundImage: `url('${getAssetUrl("/images/banner.webp")}')`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy-dark/75 to-navy-dark/30" />

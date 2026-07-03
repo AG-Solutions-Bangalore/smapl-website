@@ -9,7 +9,7 @@ export default function ProjectsHero() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: `url('${getAssetUrl("/images/about/about-hero.jpeg")}')`,
+          backgroundImage: `url('${getAssetUrl("/images/about-hero.jpeg")}')`,
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-navy-dark via-navy-dark/90 to-navy-dark/50" />

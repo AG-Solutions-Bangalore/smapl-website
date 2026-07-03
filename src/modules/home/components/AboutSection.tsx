@@ -32,7 +32,7 @@ export default function AboutSection() {
           {/* Factory Image */}
           <ScrollReveal direction="left" className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
             <LazyLoadImage
-              src={getAssetUrl("/images/about/about_us.webp")}
+              src={getAssetUrl("/images/about_us.webp")}
               alt="SMAPL Manufacturing Facility"
               effect="blur"
               className="w-full h-full object-cover"
