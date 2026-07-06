@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import TopBar from "@/components/layout/TopBar";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/common/ScrollToTop";
@@ -10,7 +9,6 @@ export default function RootLayout() {
     <div className="min-h-screen flex flex-col">
       <ScrollToTop />
       <FloatingContact />
-      <TopBar />
       <Header />
       <main className="flex-1">
         <Outlet />

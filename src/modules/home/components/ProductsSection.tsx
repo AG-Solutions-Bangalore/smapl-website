@@ -2,48 +2,49 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const products = [
   {
     name: "Open Web Girders",
     tag: "RDSO Approved",
     desc: "Truss structures built for high-span railway bridges requiring extreme structural load capacity.",
-    image: "/images/Products/OPEN WEB GIRDERS.webp",
+    image: "/images/OPEN WEB GIRDERS.webp",
     slug: "open-web-girders",
   },
   {
     name: "Composite Girders",
     tag: "RDSO Approved",
     desc: "High-strength steel-concrete composite systems optimized for highway & railway crossings.",
-    image: "/images/Products/COMPOSITE GIRDERS.webp",
+    image: "/images/COMPOSITE GIRDERS.webp",
     slug: "composite-girders",
   },
   {
     name: "Bow String Bridges",
     tag: "RDSO Approved",
     desc: "Aesthetically striking and structurally superior arched steel designs for modern transit corridors.",
-    image: "/images/Products/BOW STRING BRIDGES.webp",
+    image: "/images/BOW STRING BRIDGES.webp",
     slug: "bow-string-bridges",
   },
   {
     name: "Railway Road Over Bridge (ROB)",
     tag: "RDSO Approved",
     desc: "Heavy-duty steel girder structures built to withstand intense crossing and rail transit forces.",
-    image: "/images/Products/RAILWAY ROAD OVER BRIDGE (ROB).webp",
+    image: "/images/RAILWAY ROAD OVER BRIDGE (ROB).webp",
     slug: "railway-rob",
   },
   {
     name: "Foot Over Bridge (FOB)",
     tag: "Infrastructure",
     desc: "Safe and durable pedestrian crossing steel structures for railway stations and urban areas.",
-    image: "/images/Products/FOOT OVER BRIDGE (FOB).webp",
+    image: "/images/FOOT OVER BRIDGE (FOB).webp",
     slug: "foot-over-bridge",
   },
   {
     name: "Heavy Metal Fabrication",
     tag: "Heavy Industry",
     desc: "Custom high-capacity heavy structural fabrication for massive plants and industrial facilities.",
-    image: "/images/Products/HEAVY METAL FABRICATION.webp",
+    image: "/images/HEAVY METAL FABRICATION.webp",
     slug: "heavy-metal-fabrication",
   },
 ];
@@ -69,7 +70,7 @@ export default function ProductsSection() {
             VIEW ALL PRODUCTS
           </Link>
         </ScrollReveal>
-
+ 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {products.map((product, index) => (
             <ScrollReveal
@@ -82,7 +83,7 @@ export default function ProductsSection() {
             >
               {/* Decorative background glow on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-transparent via-accent/[0.01] to-accent/[0.04] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
+ 
               {/* Padded image container with soft gradient background */}
               <div className="w-full aspect-[16/10] bg-gradient-to-b from-slate-50/80 to-slate-100/30 flex items-center justify-center transition-all duration-500 relative z-10 border-b border-slate-100/50 overflow-hidden">
                 {/* Product Badge */}
@@ -93,10 +94,10 @@ export default function ProductsSection() {
                 }`}>
                   {product.tag}
                 </span>
-
+ 
                 <div className="w-full h-full transition-transform duration-500 ease-out transform scale-100 group-hover:scale-105">
                   <LazyLoadImage
-                    src={product.image}
+                    src={getAssetUrl(product.image)}
                     alt={product.name}
                     effect="blur"
                     className="w-full h-full object-cover"

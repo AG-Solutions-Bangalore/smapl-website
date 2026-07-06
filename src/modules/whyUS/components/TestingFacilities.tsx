@@ -8,6 +8,7 @@ import {
 import { ArrowRight } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const facilitiesList = [
   {
@@ -15,7 +16,7 @@ const facilitiesList = [
     category: "Machining & Cutting",
     description:
       "Advanced CNC drilling center for high-speed, high-precision processing of connection plates.",
-    image: "/images/whyus/1.webp",
+    image: "/images/1-whyus.webp",
     tag: "CNC Drilling",
     longDescription:
       "Our high-speed CNC plate drilling and milling machines deliver precise hole placement and edge preparation. This automation eliminates manual layout errors, ensuring perfect alignment during site assembly and structural erection.",
@@ -31,7 +32,7 @@ const facilitiesList = [
     category: "Welding & Fabrication",
     description:
       "Advanced automated welding systems ensuring consistent, code-compliant structural joints.",
-    image: "/images/whyus/2.webp",
+    image: "/images/2-whyus.webp",
     tag: "Submerged Arc (SAW)",
     longDescription:
       "State-of-the-art automated welding gantry systems designed for long-seam I-beam and box-girder fabrication. The process is monitored digitally to maintain optimal heat input, ensuring maximum tensile strength and fatigue resistance.",
@@ -47,7 +48,7 @@ const facilitiesList = [
     category: "Assembly & Testing",
     description:
       "In-house hydraulic press for structural load testing, bending evaluation, and capacity verification.",
-    image: "/images/whyus/3.webp",
+    image: "/images/3-whyus.webp",
     tag: "Proof Load Testing",
     longDescription:
       "A massive 400-ton hydraulic press used for structural testing and forming validation. This allows us to perform direct proof-load tests on critical components, verifying load-bearing capacities and ensuring compliance with heavy civil design standards.",
@@ -62,8 +63,8 @@ const facilitiesList = [
     title: "CNC Multi-Torch Flame & Plasma Profiling",
     category: "Machining & Cutting",
     description:
-      "High-volume precision profile cutting for steel plates of varying thicknesses.",
-    image: "/images/whyus/4.webp",
+      "High-volume precision profile profile cutting for steel plates of varying thicknesses.",
+    image: "/images/4-whyus.webp",
     tag: "Plasma & Oxy-Fuel",
     longDescription:
       "Industrial CNC multi-torch profile cutting system that handles large-format steel sheets. Combining oxy-fuel for thick plates and high-definition plasma for thinner sections, it provides exceptionally clean edges and precise dimensions for fabrication.",
@@ -79,7 +80,7 @@ const facilitiesList = [
     category: "Machining & Cutting",
     description:
       "Heavy-duty radial drilling machines designed for accurate drilling on large structural steel parts.",
-    image: "/images/whyus/5.webp",
+    image: "/images/5-whyus.webp",
     tag: "Radial Drilling",
     longDescription:
       "Our heavy radial arm drilling center allows us to perform large-diameter hole drilling, tapping, and reaming operations on assembled girders and heavy structural shapes that cannot easily be fed into automated lines.",
@@ -90,22 +91,22 @@ const facilitiesList = [
       "Spindle Speeds": "16 steps (25 - 2000 RPM)",
     },
   },
-  {
-    title: "Integrated CNC H-Beam Drilling & Sawing",
-    category: "Machining & Cutting",
-    description:
-      "Automated structural beam line doing multi-axis drilling and mitre cutting in a single pass.",
-    image: "/images/whyus/6.webp",
-    tag: "H-Beam Line",
-    longDescription:
-      "The backbone of our structural fabrication shop, this integrated CNC line drills holes on three faces of structural beams in one pass, followed immediately by clean mitre-cut sizing. This minimizes material handling and guarantees absolute geometric precision.",
-    specs: {
-      "Max Beam Size": "1000mm x 500mm (Web x Flange)",
-      "Drilling Axes": "3 Axes (Web and both Flanges simultaneously)",
-      "Sawing Angle": "Up to 60 degrees (Mitre)",
-      "Length Measuring": "Laser-guided servo encoder",
-    },
-  },
+  // {
+  //   title: "Integrated CNC H-Beam Drilling & Sawing",
+  //   category: "Machining & Cutting",
+  //   description:
+  //     "Automated structural beam line doing multi-axis drilling and mitre cutting in a single pass.",
+  //   image: "/images/whyus/6.webp",
+  //   tag: "H-Beam Line",
+  //   longDescription:
+  //     "The backbone of our structural fabrication shop, this integrated CNC line drills holes on three faces of structural beams in one pass, followed immediately by clean mitre-cut sizing. This minimizes material handling and guarantees absolute geometric precision.",
+  //   specs: {
+  //     "Max Beam Size": "1000mm x 500mm (Web x Flange)",
+  //     "Drilling Axes": "3 Axes (Web and both Flanges simultaneously)",
+  //     "Sawing Angle": "Up to 60 degrees (Mitre)",
+  //     "Length Measuring": "Laser-guided servo encoder",
+  //   },
+  // },
 ];
 
 export default function TestingFacilities() {
@@ -155,7 +156,7 @@ export default function TestingFacilities() {
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/20 to-transparent z-10 opacity-60 group-hover:opacity-85 transition-opacity duration-500" />
                       <div className="w-full h-full transition-transform duration-700 ease-out transform scale-100 group-hover:scale-105">
                         <LazyLoadImage
-                          src={item.image}
+                          src={getAssetUrl(item.image)}
                           alt={item.title}
                           effect="blur"
                           className="w-full h-full object-cover"
@@ -191,7 +192,7 @@ export default function TestingFacilities() {
                   <div className="relative w-full aspect-[16/7] bg-slate-900">
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/40 to-transparent z-10" />
                     <LazyLoadImage
-                      src={item.image}
+                      src={getAssetUrl(item.image)}
                       alt={item.title}
                       effect="blur"
                       className="w-full h-full object-cover"

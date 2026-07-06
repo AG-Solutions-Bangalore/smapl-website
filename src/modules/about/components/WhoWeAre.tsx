@@ -1,6 +1,7 @@
 import { CheckCircle2 } from "lucide-react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const highlights = [
   "ISO 9001:2015 Certified Quality Management System",
@@ -53,7 +54,7 @@ export default function WhoWeAre() {
           <ScrollReveal direction="right" delay={150} className="relative w-full">
             <div className="rounded-2xl overflow-hidden aspect-[4/3] bg-slate-100 w-full">
               <LazyLoadImage
-                src="/images/about/about_us.webp"
+                src={getAssetUrl("/images/about_us.webp")}
                 alt="SMAPL Manufacturing Facility"
                 effect="blur"
                 className="w-full h-full object-cover"

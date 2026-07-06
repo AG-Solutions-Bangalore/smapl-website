@@ -2,43 +2,44 @@ import { Search, ArrowRight } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import ScrollReveal from "@/components/common/ScrollReveal";
+import { getAssetUrl } from "@/lib/utils";
 
 const products = [
   {
     title: "Open Web Girders",
     description:
       "RDSO-approved high-quality open web girders for railway bridges, manufactured to precision standards.",
-    image: "/images/Products/OPEN WEB GIRDERS.webp",
+    image: "/images/OPEN WEB GIRDERS.webp",
   },
   {
     title: "Composite Girders",
     description:
       "Strong and durable composite girders combining steel and concrete for highway and railway bridges.",
-    image: "/images/Products/COMPOSITE GIRDERS.webp",
+    image: "/images/COMPOSITE GIRDERS.webp",
   },
   {
     title: "Bow String Bridges",
     description:
       "Aesthetically designed and structurally robust bow string steel bridges for modern infrastructure.",
-    image: "/images/Products/BOW STRING BRIDGES.webp",
+    image: "/images/BOW STRING BRIDGES.webp",
   },
   {
     title: "Railway Road Over Bridge (ROB)",
     description:
       "Custom fabricated steel structures for railway road over bridges ensuring safety and long-term durability.",
-    image: "/images/Products/RAILWAY ROAD OVER BRIDGE (ROB).webp",
+    image: "/images/RAILWAY ROAD OVER BRIDGE (ROB).webp",
   },
   {
     title: "Foot Over Bridge (FOB)",
     description:
       "Pedestrian foot over bridges designed for public transit areas, railway stations, and urban environments.",
-    image: "/images/Products/FOOT OVER BRIDGE (FOB).webp",
+    image: "/images/FOOT OVER BRIDGE (FOB).webp",
   },
   {
     title: "Heavy Metal Fabrication",
     description:
       "Heavy structural steel fabrication services for industrial applications and massive engineering projects.",
-    image: "/images/Products/HEAVY METAL FABRICATION.webp",
+    image: "/images/HEAVY METAL FABRICATION.webp",
   },
 ];
 
@@ -75,7 +76,7 @@ export default function ProductGrid() {
             <div className="w-full aspect-[4/3] overflow-hidden bg-gray-100">
               <div className="w-full h-full transition-transform duration-500 ease-out transform scale-100 group-hover:scale-105">
                 <LazyLoadImage
-                  src={product.image}
+                  src={getAssetUrl(product.image)}
                   alt={product.title}
                   effect="blur"
                   className="w-full h-full object-cover"
