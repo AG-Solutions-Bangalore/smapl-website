@@ -174,23 +174,23 @@ const approvalsAndRegistrations = [
     details:
       "Sulit Metals & Alloys Private Ltd. Goods and Services Tax registration credentials.",
   },
-  {
-    title: "Board of Directors Registration",
-    fileName: "Board_of_Directors_Registration.pdf",
-    path: "/docs/approvals/Board_of_Directors_Registration.pdf",
-    size: "309 KB",
-    type: "Registration",
-    details:
-      "Official Board of Directors registry and corporate governance details.",
-  },
-  {
-    title: "Partnership Deed",
-    fileName: "Partnership_Deed.pdf",
-    path: "/docs/approvals/Partnership_Deed.pdf",
-    size: "297 KB",
-    type: "Agreement",
-    details: "Partnership deed agreement credentials of Sulit Metals & Alloys.",
-  },
+  // {
+  //   title: "Board of Directors Registration",
+  //   fileName: "Board_of_Directors_Registration.pdf",
+  //   path: "/docs/approvals/Board_of_Directors_Registration.pdf",
+  //   size: "309 KB",
+  //   type: "Registration",
+  //   details:
+  //     "Official Board of Directors registry and corporate governance details.",
+  // },
+  // {
+  //   title: "Partnership Deed",
+  //   fileName: "Partnership_Deed.pdf",
+  //   path: "/docs/approvals/Partnership_Deed.pdf",
+  //   size: "297 KB",
+  //   type: "Agreement",
+  //   details: "Partnership deed agreement credentials of Sulit Metals & Alloys.",
+  // },
   {
     title: "Corporate MoU",
     fileName: "Corporate_MoU.pdf",

@@ -1,6 +1,6 @@
-import diamondProduct from "@/assets/images/diamond-product.svg";
+// import diamondProduct from "@/assets/images/diamond-product.svg";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Download } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "@/components/common/ScrollReveal";
 import { getAssetUrl } from "@/lib/utils";
@@ -14,13 +14,13 @@ export default function HeroSection() {
           backgroundImage: `url('${getAssetUrl("/images/banner.webp")}')`,
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/90 via-navy-dark/75 to-navy-dark/30" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy-dark/80 via-navy-dark/45 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 pt-20 pb-32 md:pt-28 md:pb-44 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <ScrollReveal direction="up" className="text-white space-y-6">
-            <p className="text-accent font-medium tracking-wide">
+            <p className="text-sky-400 font-medium tracking-wide">
               Delivering Strength. Building Trust.
             </p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
@@ -37,17 +37,12 @@ export default function HeroSection() {
                   <ArrowRight className="w-5 h-5" />
                 </Button>
               </Link>
-              <Button className="text-black hover:bg-gray-200 bg-white rounded-md font-semibold px-8 py-5 text-base">
-                DOWNLOAD CATALOG
-                <Download className="w-5 h-5" />
-              </Button>
             </div>
           </ScrollReveal>
 
           {/* Right Diamond Images */}
-          <ScrollReveal direction="right" delay={200} className="relative hidden lg:flex items-center justify-center">
+          {/* <ScrollReveal direction="right" delay={200} className="relative hidden lg:flex items-center justify-center">
             <div className="relative w-80 h-80">
-              {/* Top diamond */}
               <div className="absolute top-0 left-1/2 -translate-x-1/2 rotate-45 w-36 h-36 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
                 <img
                   src={diamondProduct}
@@ -58,7 +53,6 @@ export default function HeroSection() {
                   className="w-full h-full object-cover -rotate-45 scale-150"
                 />
               </div>
-              {/* Left diamond */}
               <div className="absolute top-1/2 left-0 -translate-y-1/2 rotate-45 w-36 h-36 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
                 <img
                   src={diamondProduct}
@@ -69,7 +63,6 @@ export default function HeroSection() {
                   className="w-full h-full object-cover -rotate-45 scale-150"
                 />
               </div>
-              {/* Right diamond */}
               <div className="absolute top-1/2 right-0 -translate-y-1/2 rotate-45 w-36 h-36 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
                 <img
                   src={diamondProduct}
@@ -80,7 +73,6 @@ export default function HeroSection() {
                   className="w-full h-full object-cover -rotate-45 scale-150"
                 />
               </div>
-              {/* Bottom diamond */}
               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 rotate-45 w-36 h-36 bg-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/20">
                 <img
                   src={diamondProduct}
@@ -92,7 +84,7 @@ export default function HeroSection() {
                 />
               </div>
             </div>
-          </ScrollReveal>
+          </ScrollReveal> */}
         </div>
       </div>
     </section>

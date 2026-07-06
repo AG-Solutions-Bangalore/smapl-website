@@ -1,7 +1,8 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
 
-export const ASSETS_BASE_URL = "https://agsdemo.in/smapl/web_images/";
+// export const ASSETS_BASE_URL = "https://agsdemo.in/smapl/web_images/";
+export const ASSETS_BASE_URL = "https://sulitmetals.com/web_images/";
 
 export function getAssetUrl(path: string): string {
   if (!path) return "";
@@ -28,5 +29,5 @@ export function getAssetUrl(path: string): string {
 }
 
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }

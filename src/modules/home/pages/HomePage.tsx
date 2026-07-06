@@ -16,8 +16,8 @@ export default function HomePage() {
       />
       <HeroSection />
       <FeaturesSection />
-      <ProductsSection />
       <AboutSection />
+      <ProductsSection />
       <ClientsSection />
       <CtaBanner />
     </div>

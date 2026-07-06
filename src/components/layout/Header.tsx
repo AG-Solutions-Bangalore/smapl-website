@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { ChevronDown, Menu, X } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ChevronDown, Menu, X, Mail, Phone } from "lucide-react";
 import logo from "@/assets/images/logo.svg";
 
 const navLinks = [
@@ -31,71 +30,88 @@ export default function Header() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   return (
-    <header className="bg-white sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-16">
-        <Link to="/" className="flex items-center gap-3">
-          <img src={logo} alt="SMAPL Logo" className="h-10 md:h-12" />
+    <header className="bg-white sticky top-0 z-50 shadow-xs border-b border-gray-100">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4 lg:py-6">
+        <Link to="/" className="flex items-center gap-3 shrink-0">
+          <img src={logo} alt="SMAPL Logo" className="h-12 md:h-14 lg:h-16" />
           <div className="flex flex-col">
-            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Sulit Metals &</span>
-            <span className="text-sm md:text-base font-extrabold text-[#08182F] leading-tight tracking-tight">Alloys Private Ltd.</span>
+            <span className="text-base md:text-lg lg:text-xl font-extrabold text-[#08182F] leading-tight tracking-tight">Sulit Metals &</span>
+            <span className="text-base md:text-lg lg:text-xl font-extrabold text-[#08182F] leading-tight tracking-tight">Alloys Private Ltd.</span>
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-1" aria-label="Desktop navigation">
-          {navLinks.map((link) =>
-            link.children ? (
-              <div
-                key={link.label}
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(link.label)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
-                    location.pathname.startsWith("/products")
+        {/* Right Side Column: Contact on top, Nav at bottom */}
+        <div className="hidden lg:flex flex-col items-end gap-3.5">
+          
+          {/* Top Row: Contact Details */}
+          <div className="flex items-center gap-6">
+            <a
+              href="mailto:sulitmetals@gmail.com"
+              className="flex items-center gap-2 text-[#08182F] hover:text-accent transition-colors text-sm font-bold"
+            >
+              <Mail className="w-4.5 h-4.5 text-accent" />
+              <span>sulitmetals@gmail.com</span>
+            </a>
+
+            <a
+              href="tel:+919916927508"
+              className="flex items-center gap-2 border-l pl-4 text-[#08182F] hover:text-accent transition-colors text-sm font-bold border-slate-200"
+            >
+              <Phone className="w-4.5 h-4.5 text-accent" />
+              <span>+91 99169 27508</span>
+            </a>
+          </div>
+
+          {/* Bottom Row: Desktop Nav */}
+          <nav className="flex items-center gap-2 xl:gap-4" aria-label="Desktop navigation">
+            {navLinks.map((link) =>
+              link.children ? (
+                <div
+                  key={link.label}
+                  className="relative"
+                  onMouseEnter={() => setActiveDropdown(link.label)}
+                  onMouseLeave={() => setActiveDropdown(null)}
+                >
+                  <button
+                    className={`flex items-center gap-1 px-3 py-1.5 text-sm font-semibold rounded-md transition-colors ${
+                      location.pathname.startsWith("/products")
+                        ? "text-accent"
+                        : "text-navy hover:text-accent"
+                    }`}
+                  >
+                    {link.label}
+                    <ChevronDown className="w-4 h-4" />
+                  </button>
+                  {activeDropdown === link.label && (
+                    <div className="absolute top-full right-0 mt-1 w-56 bg-white border border-border rounded-lg shadow-lg py-2 z-50">
+                      {link.children.map((child) => (
+                        <Link
+                          key={child.to}
+                          to={child.to}
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors"
+                          onClick={() => setActiveDropdown(null)}
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className={`px-3 py-1.5 text-sm font-semibold rounded-md transition-colors ${
+                    location.pathname === link.to
                       ? "text-accent"
                       : "text-navy hover:text-accent"
                   }`}
                 >
                   {link.label}
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-                {activeDropdown === link.label && (
-                  <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-border rounded-lg shadow-lg py-2 z-50">
-                    {link.children.map((child) => (
-                      <Link
-                        key={child.to}
-                        to={child.to}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-accent transition-colors"
-                        onClick={() => setActiveDropdown(null)}
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                key={link.to}
-                to={link.to}
-                className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
-                  location.pathname === link.to
-                    ? "text-accent"
-                    : "hover:text-accent"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ),
-          )}
-        </nav>
-
-        <div className="hidden lg:block">
-          <Button className="bg-accent hover:brightness-110 text-white font-semibold px-6 py-2 rounded-md">
-            GET A QUOTE
-          </Button>
+                </Link>
+              ),
+            )}
+          </nav>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -163,9 +179,25 @@ export default function Header() {
               </Link>
             ),
           )}
-          <Button className="w-full bg-accent hover:brightness-110 text-white font-semibold mt-4">
+          {/* <Button className="w-full bg-accent hover:brightness-110 text-white font-semibold mt-4">
             GET A QUOTE
-          </Button>
+          </Button> */}
+          <div className="border-t border-border pt-4 mt-4 space-y-3">
+            <a
+              href="mailto:sulitmetals@gmail.com"
+              className="flex items-center gap-3 px-3 py-2 text-sm font-semibold text-navy hover:text-accent transition-colors"
+            >
+              <Mail className="w-5 h-5 text-accent" />
+              <span>sulitmetals@gmail.com</span>
+            </a>
+            <a
+              href="tel:+919916927508"
+              className="flex items-center gap-3 px-3 py-2 text-sm font-semibold text-navy hover:text-accent transition-colors"
+            >
+              <Phone className="w-5 h-5 text-accent" />
+              <span>+91 99169 27508</span>
+            </a>
+          </div>
         </nav>
       )}
     </header>
