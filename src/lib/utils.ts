@@ -10,6 +10,10 @@ export function getAssetUrl(path: string): string {
     return path;
   }
   let cleanPath = path;
+  if (cleanPath.startsWith("/pdf/") || cleanPath.startsWith("pdf/")) {
+    const formatted = cleanPath.startsWith("/") ? cleanPath : `/${cleanPath}`;
+    return encodeURI(formatted);
+  }
   if (cleanPath.startsWith("/docs/")) {
     cleanPath = cleanPath.slice(6);
   } else if (cleanPath.startsWith("docs/")) {

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useSearchParams } from "react-router-dom";
 import {
   FileText,
   Download,
@@ -112,25 +112,43 @@ const videos = [
 // Official Documents List
 const approvalsAndRegistrations = [
   {
-    title: "RDSO Approval Letter",
-    fileName: "RDSO_Approve_Letter.pdf",
-    path: "/docs/approvals/RDSO_Approve_Letter.pdf",
-    size: "91 KB",
+    title: "Details of RDSO Approval Certificate",
+    fileName: "DETAILS OF RDSO.jpg.jpeg",
+    path: "/pdf/DETAILS OF RDSO.jpg.jpeg",
+    size: "118 KB",
     type: "Approval",
     details:
-      "Research Designs and Standards Organisation (RDSO) official approval letter for structural steel fabrication.",
+      "Research Designs and Standards Organisation (RDSO) official approval certificate for structural steel bridge girder fabrication.",
   },
   {
-    title: "ISO 9001 Certificate",
-    fileName: "ISO_Certificate.pdf",
-    path: "/docs/approvals/ISO_Certificate.pdf",
-    size: "152 KB",
+    title: "RDSO Vendor Technical Documentation",
+    fileName: "Screenshot 2026-08-14 143645_edited.pdf",
+    path: "/pdf/Screenshot 2026-08-14 143645_edited.pdf",
+    size: "2.1 MB",
+    type: "Approval",
+    details:
+      "Official RDSO government vendor approval and technical verification records.",
+  },
+  {
+    title: "ISO Certification from BIS (Para 6.8 of STR)",
+    fileName: "ISO Cetification from bis as per Para 6.8 of STR.pdf",
+    path: "/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
+    size: "3.6 MB",
     type: "Compliance",
     details:
-      "ISO 9001:2015 Certification validating our Quality Management System (QMS).",
+      "Bureau of Indian Standards (BIS) ISO certification validating our Quality Management System as per Para 6.8 of STR.",
   },
   {
-    title: "Factory License (2026-2040)",
+    title: "Firm's Registration Details (Under Companies Act)",
+    fileName: "Firm's Registration Details ( under the company act).pdf",
+    path: "/pdf/Firm's Registration Details ( under the company act).pdf",
+    size: "351 KB",
+    type: "Registration",
+    details:
+      "Official Incorporation & Registration certificate under the Companies Act for Sulit Metals & Alloys Private Ltd.",
+  },
+  {
+    title: "Factory License Details (2026-2040)",
     fileName: "Factory_License.pdf",
     path: "/docs/approvals/Factory_License.pdf",
     size: "83 KB",
@@ -139,60 +157,7 @@ const approvalsAndRegistrations = [
       "Officially renewed factory operating license valid from 2026 up to 2040.",
   },
   {
-    title: "Certificate of Incorporation",
-    fileName: "Certificate_of_Incorporation.pdf",
-    path: "/docs/approvals/Certificate_of_Incorporation.pdf",
-    size: "537 KB",
-    type: "Registration",
-    details:
-      "Official Certificate of Incorporation for Sulit Metals & Alloys Private Ltd.",
-  },
-  {
-    title: "Memorandum of Association (MOA)",
-    fileName: "MOA.pdf",
-    path: "/docs/approvals/MOA.pdf",
-    size: "5.9 MB",
-    type: "Constitutional",
-    details:
-      "Memorandum of Association detailing the company's constitution and scope.",
-  },
-  {
-    title: "Articles of Association (AOA)",
-    fileName: "AOA.pdf",
-    path: "/docs/approvals/AOA.pdf",
-    size: "9.6 MB",
-    type: "Constitutional",
-    details:
-      "Articles of Association governing the internal management of the company.",
-  },
-  {
-    title: "Firm GST Registration Certificate",
-    fileName: "GST_Certificate.pdf",
-    path: "/docs/approvals/GST_Certificate.pdf",
-    size: "603 KB",
-    type: "Registration",
-    details:
-      "Sulit Metals & Alloys Private Ltd. Goods and Services Tax registration credentials.",
-  },
-  // {
-  //   title: "Board of Directors Registration",
-  //   fileName: "Board_of_Directors_Registration.pdf",
-  //   path: "/docs/approvals/Board_of_Directors_Registration.pdf",
-  //   size: "309 KB",
-  //   type: "Registration",
-  //   details:
-  //     "Official Board of Directors registry and corporate governance details.",
-  // },
-  // {
-  //   title: "Partnership Deed",
-  //   fileName: "Partnership_Deed.pdf",
-  //   path: "/docs/approvals/Partnership_Deed.pdf",
-  //   size: "297 KB",
-  //   type: "Agreement",
-  //   details: "Partnership deed agreement credentials of Sulit Metals & Alloys.",
-  // },
-  {
-    title: "Corporate MoU",
+    title: "Corporate MoU & Guidelines",
     fileName: "Corporate_MoU.pdf",
     path: "/docs/approvals/Corporate_MoU.pdf",
     size: "802 KB",
@@ -205,7 +170,7 @@ const approvalsAndRegistrations = [
 // Infrastructure Assets
 const infrastructureAssets = {
   powerDemand:
-    "Power demand & installed power supply fully optimized for massive automated machinery and CNC drilling operations.",
+    "Power demand & installed power supply fully optimized for massive automated machinery, heavy submerged arc welding, and CNC plate drilling operations.",
   shops: [
     {
       name: "Template Layout Area",
@@ -230,25 +195,32 @@ const infrastructureAssets = {
   ],
   documents: [
     {
-      title: "Machinery & Plants List",
-      fileName: "Sulit_Machinery.pdf",
-      path: "/docs/machinery/Sulit_Machinery.pdf",
-      size: "670 KB",
-      actionLabel: "View Machinery List",
+      title: "Machine List & Infrastructure Photographs",
+      fileName: "MANCHINE LIST & PHOTOGRAPHS.pdf",
+      path: "/pdf/MANCHINE LIST & PHOTOGRAPHS.pdf",
+      size: "5.3 MB",
+      actionLabel: "View Machinery & Photos",
     },
     {
-      title: "Factory Layout Blueprint",
-      fileName: "Factory_Layout.pdf",
-      path: "/docs/machinery/Factory_Layout.pdf",
-      size: "88 KB",
-      actionLabel: "View Factory Layout",
+      title: "Power Demand & Installed Capacity",
+      fileName: "POWER DEMAND & INSTALLED.pdf",
+      path: "/pdf/POWER DEMAND & INSTALLED.pdf",
+      size: "2.7 MB",
+      actionLabel: "View Power Capacity Doc",
     },
     {
-      title: "Power Allocation Details",
-      fileName: "Power_Details.pdf",
-      path: "/docs/machinery/Power_Details.pdf",
-      size: "PDF Doc",
-      actionLabel: "View Power Details",
+      title: "Testing Facilities (Provision related to PAUT)",
+      fileName: "Provision related to PAUT.pdf",
+      path: "/pdf/Provision related to PAUT.pdf",
+      size: "6.4 MB",
+      actionLabel: "View PAUT Testing Facility",
+    },
+    {
+      title: "Factory Layout Blueprint (Layout N-1)",
+      fileName: "layout N-1.pdf",
+      path: "/pdf/layout N-1.pdf",
+      size: "204 KB",
+      actionLabel: "View Factory Layout Plan",
     },
   ],
 };
@@ -360,6 +332,27 @@ const projectTrackRecord = [
 export default function RDSOPage() {
   const [activeVideo, setActiveVideo] = useState<string | null>(null);
   const [activeTab, setActiveTab] = useState<string>("approvals");
+  const location = useLocation();
+  const [searchParams] = useSearchParams();
+
+  useEffect(() => {
+    const tabParam = searchParams.get("tab");
+    if (tabParam && ["approvals", "infrastructure", "artisans", "projects"].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      if (["approvals", "infrastructure", "artisans", "projects"].includes(id)) {
+        setActiveTab(id);
+      }
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 150);
+    }
+  }, [location.hash, searchParams]);
 
   // Find the selected video data
   const selectedVideo = videos.find((v) => v.id === activeVideo);
@@ -446,7 +439,7 @@ export default function RDSOPage() {
       </section>
 
       {/* Main Tabbed Portal Section */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
+      <section id="audit-files" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-20">
         <ScrollReveal
           direction="up"
           className="text-center max-w-3xl mx-auto mb-12"
@@ -673,12 +666,24 @@ export default function RDSOPage() {
                   asChild
                 >
                   <a
-                    href={getAssetUrl("/docs/artisans/Organization_Chart.pdf")}
+                    href={getAssetUrl("/pdf/Organization chart-smapl.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Download className="w-3.5 h-3.5" /> View Official
-                    Organisation Chart (PDF)
+                    <Download className="w-3.5 h-3.5" /> View Organisation Chart (PDF)
+                  </a>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl font-semibold text-xs"
+                  asChild
+                >
+                  <a
+                    href={getAssetUrl("/pdf/ARTISAN-INVOLED IN CUTTING DRILLING WELDING WITH MAN POWER DETAILES.pdf")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Download className="w-3.5 h-3.5" /> View Manpower & Artisans Detailed Register (PDF)
                   </a>
                 </Button>
               </div>
@@ -795,7 +800,7 @@ export default function RDSOPage() {
       </section>
 
       {/* Directors Profile Section */}
-      <section className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200">
+      <section id="directors" className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 scroll-mt-20">
         <ScrollReveal
           direction="up"
           className="text-center max-w-3xl mx-auto mb-16"
@@ -1015,7 +1020,7 @@ export default function RDSOPage() {
       */}
 
       {/* Address & Contacts Section */}
-      <section className="bg-[#0B2545] text-white py-20 relative overflow-hidden">
+      <section id="address" className="bg-[#0B2545] text-white py-20 relative overflow-hidden scroll-mt-20">
         {/* Background Gradients */}
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#C5A880]/10 blur-3xl" />
