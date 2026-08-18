@@ -121,15 +121,6 @@ const approvalsAndRegistrations = [
       "Research Designs and Standards Organisation (RDSO) official approval certificate for structural steel bridge girder fabrication.",
   },
   {
-    title: "RDSO Vendor Technical Documentation",
-    fileName: "Screenshot 2026-08-14 143645_edited.pdf",
-    path: "/pdf/Screenshot 2026-08-14 143645_edited.pdf",
-    size: "2.1 MB",
-    type: "Approval",
-    details:
-      "Official RDSO government vendor approval and technical verification records.",
-  },
-  {
     title: "ISO Certification from BIS (Para 6.8 of STR)",
     fileName: "ISO Cetification from bis as per Para 6.8 of STR.pdf",
     path: "/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
@@ -337,12 +328,12 @@ export default function RDSOPage() {
 
   useEffect(() => {
     const tabParam = searchParams.get("tab");
-    if (tabParam && ["approvals", "infrastructure", "artisans", "projects"].includes(tabParam)) {
+    if (tabParam && ["approvals", "layout", "infrastructure", "artisans", "projects"].includes(tabParam)) {
       setActiveTab(tabParam);
     }
     if (location.hash) {
       const id = location.hash.replace("#", "");
-      if (["approvals", "infrastructure", "artisans", "projects"].includes(id)) {
+      if (["approvals", "layout", "infrastructure", "artisans", "projects"].includes(id)) {
         setActiveTab(id);
       }
       setTimeout(() => {
@@ -472,6 +463,16 @@ export default function RDSOPage() {
               <FileCheck className="w-4 h-4" /> Approvals & Registrations
             </button>
             <button
+              onClick={() => setActiveTab("layout")}
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
+                activeTab === "layout"
+                  ? "border-[#042D61] text-[#042D61]"
+                  : "border-transparent text-slate-500 hover:text-slate-900"
+              }`}
+            >
+              <Building2 className="w-4 h-4" /> Layout (Plant Blueprint)
+            </button>
+            <button
               onClick={() => setActiveTab("infrastructure")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
                 activeTab === "infrastructure"
@@ -558,10 +559,83 @@ export default function RDSOPage() {
           </ScrollReveal>
         )}
 
-        {/* Tab 2: Infrastructure & Plant */}
+        {/* Tab 2: Factory Layout */}
+        {activeTab === "layout" && (
+          <ScrollReveal direction="none" className="space-y-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+              {/* Left Column: Fabrication Shops & Bay Zones */}
+              <div className="lg:col-span-8 space-y-6">
+                <div className="bg-white rounded-3xl p-8 border border-slate-200">
+                  <h3 className="text-xl font-bold text-[#08182F] mb-4 flex items-center gap-2">
+                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication Shops & Operational Zones
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                    Our manufacturing unit is architected with dedicated bays for raw material staging, CNC processing, automated sub-arc welding, shot blasting, and climate-controlled protective coatings.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {infrastructureAssets.shops.map((shop) => (
+                      <div
+                        key={shop.name}
+                        className="p-4 rounded-xl bg-slate-50 border border-slate-100"
+                      >
+                        <h4 className="font-bold text-sm text-slate-800 mb-1">
+                          {shop.name}
+                        </h4>
+                        <p className="text-xs text-slate-500 leading-normal">
+                          {shop.desc}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column: Blueprint PDF Download */}
+              <div className="lg:col-span-4 space-y-6">
+                <div className="bg-white rounded-3xl p-6 border border-slate-200 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#042D61] flex items-center justify-center border border-blue-100">
+                      <Building2 className="w-6 h-6" />
+                    </div>
+                    <span className="text-slate-400 text-xs font-semibold">204 KB</span>
+                  </div>
+                  <div>
+                    <span className="text-[10px] font-bold text-[#C5A880] uppercase tracking-wider block mb-1">
+                      Official Blueprint
+                    </span>
+                    <h4 className="font-bold text-[#08182F] text-lg mb-2">
+                      Factory Layout Plan (Layout N-1)
+                    </h4>
+                    <p className="text-slate-500 text-xs leading-relaxed mb-4">
+                      Complete architectural layout blueprint displaying material flows, CNC bay allocations, gantry crane spans, and component assembly zones.
+                    </p>
+                    <span className="text-[10px] font-mono text-slate-400 truncate block mb-4">
+                      layout N-1.pdf
+                    </span>
+                  </div>
+                  <Button
+                    variant="outline"
+                    className="w-full border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1.5 font-semibold text-xs py-5"
+                    asChild
+                  >
+                    <a
+                      href={getAssetUrl("/pdf/layout N-1.pdf")}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Download className="w-4 h-4" /> View Factory Layout Plan (PDF)
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </ScrollReveal>
+        )}
+
+        {/* Tab 3: Infrastructure & Plant */}
         {activeTab === "infrastructure" && (
           <ScrollReveal direction="none" className="space-y-8">
-            {/* Quick stats on Power and Shops */}
+            {/* Quick stats on Power and Machinery */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
               {/* Left detail Column */}
               <div className="lg:col-span-8 space-y-6">
@@ -582,23 +656,36 @@ export default function RDSOPage() {
 
                 <div className="bg-white rounded-3xl p-8 border border-slate-200">
                   <h3 className="text-xl font-bold text-[#08182F] mb-6 flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication
-                    Shops Overview
+                    <Settings className="w-5 h-5 text-[#C5A880]" /> Plant & Machinery Capabilities
                   </h3>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    {infrastructureAssets.shops.map((shop) => (
-                      <div
-                        key={shop.name}
-                        className="p-4 rounded-xl bg-slate-50 border border-slate-100"
-                      >
-                        <h4 className="font-bold text-sm text-slate-800 mb-1">
-                          {shop.name}
-                        </h4>
-                        <p className="text-xs text-slate-500 leading-normal">
-                          {shop.desc}
-                        </p>
-                      </div>
-                    ))}
+                  <p className="text-slate-600 text-sm leading-relaxed mb-4">
+                    Equipped with high-capacity CNC plate drilling, multi-torch plasma profiling, automated submerged arc welding gantries, and NABL certified quality verification instruments.
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                        Machining
+                      </span>
+                      <h4 className="font-bold text-sm text-[#08182F]">
+                        CNC Plate Drilling & Profiling
+                      </h4>
+                    </div>
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                        Welding
+                      </span>
+                      <h4 className="font-bold text-sm text-[#08182F]">
+                        Automated Submerged Arc (SAW)
+                      </h4>
+                    </div>
+                    <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
+                      <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                        Non-Destructive Testing
+                      </span>
+                      <h4 className="font-bold text-sm text-[#08182F]">
+                        PAUT & Ultrasonic Testing
+                      </h4>
+                    </div>
                   </div>
                 </div>
               </div>
