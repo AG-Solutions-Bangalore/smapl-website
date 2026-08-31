@@ -129,6 +129,7 @@ const approvalsAndRegistrations = [
     details:
       "Bureau of Indian Standards (BIS) ISO certification validating our Quality Management System as per Para 6.8 of STR.",
   },
+
   {
     title: "Firm's Registration Details (Under Companies Act)",
     fileName: "Firm's Registration Details ( under the company act).pdf",
@@ -155,6 +156,17 @@ const approvalsAndRegistrations = [
     type: "Agreement",
     details:
       "Memorandum of Understanding (MoU) defining corporate and partnership guidelines.",
+  },
+
+  {
+    title: "ISO Certification from ASPL",
+    fileName: "9001_yr_2026.pdf",
+    path: "/docs/approvals/9001_yr_2026.pdf",
+    size: "1.2 MB",
+    type: "Compliance",
+    details:
+      "ISO 9001 certification from ASPL validating our Quality Management System (valid up to 2026).",
+    download: true,
   },
 ];
 
@@ -454,51 +466,46 @@ export default function RDSOPage() {
           <div className="flex border-b border-slate-200 min-w-max">
             <button
               onClick={() => setActiveTab("approvals")}
-              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
-                activeTab === "approvals"
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "approvals"
                   ? "border-[#042D61] text-[#042D61]"
                   : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+                }`}
             >
               <FileCheck className="w-4 h-4" /> Approvals & Registrations
             </button>
             <button
               onClick={() => setActiveTab("layout")}
-              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
-                activeTab === "layout"
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "layout"
                   ? "border-[#042D61] text-[#042D61]"
                   : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+                }`}
             >
               <Building2 className="w-4 h-4" /> Layout (Plant Blueprint)
             </button>
             <button
               onClick={() => setActiveTab("infrastructure")}
-              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
-                activeTab === "infrastructure"
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "infrastructure"
                   ? "border-[#042D61] text-[#042D61]"
                   : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+                }`}
             >
               <Settings className="w-4 h-4" /> Plant & Machinery
             </button>
             <button
               onClick={() => setActiveTab("artisans")}
-              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
-                activeTab === "artisans"
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "artisans"
                   ? "border-[#042D61] text-[#042D61]"
                   : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+                }`}
             >
               <Users className="w-4 h-4" /> Welders & Artisans
             </button>
             <button
               onClick={() => setActiveTab("projects")}
-              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${
-                activeTab === "projects"
+              className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "projects"
                   ? "border-[#042D61] text-[#042D61]"
                   : "border-transparent text-slate-500 hover:text-slate-900"
-              }`}
+                }`}
             >
               <History className="w-4 h-4" /> Executed & In-Hand Works
             </button>
@@ -542,15 +549,41 @@ export default function RDSOPage() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs"
+                    className="border-[#042D61] text-[#042D61] hover:bg-[#042D61] hover:text-white rounded-xl gap-1 font-semibold text-xs cursor-pointer"
                     asChild
                   >
                     <a
                       href={getAssetUrl(doc.path)}
                       target="_blank"
                       rel="noopener noreferrer"
+                      download={doc.download ? doc.fileName : undefined}
+                      onClick={(e) => {
+                        if (doc.download) {
+                          e.preventDefault();
+                          const url = getAssetUrl(doc.path);
+                          fetch(url)
+                            .then((res) => res.blob())
+                            .then((blob) => {
+                              const blobUrl = window.URL.createObjectURL(blob);
+                              const link = document.createElement("a");
+                              link.href = blobUrl;
+                              link.download = doc.fileName || "download.pdf";
+                              document.body.appendChild(link);
+                              link.click();
+                              document.body.removeChild(link);
+                              window.URL.revokeObjectURL(blobUrl);
+                            })
+                            .catch(() => {
+                              const link = document.createElement("a");
+                              link.href = url;
+                              link.download = doc.fileName || "download.pdf";
+                              link.target = "_blank";
+                              link.click();
+                            });
+                        }
+                      }}
                     >
-                      <Download className="w-3.5 h-3.5" /> View File
+                      <Download className="w-3.5 h-3.5" /> {doc.download ? "View File" : "View File"}
                     </a>
                   </Button>
                 </div>
