@@ -65,7 +65,12 @@ const navLinks: NavItem[] = [
           },
           {
             to: "/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
-            label: "ISO 9001 CERTIFICATION",
+            label: "ISO CERTIFICATION (BIS)",
+            external: true,
+          },
+          {
+            to: "/docs/approvals/9001_yr_2026.pdf",
+            label: "ISO CERTIFICATION (ASPL)",
             external: true,
           },
           {
