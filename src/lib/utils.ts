@@ -3,6 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 // export const ASSETS_BASE_URL = "https://agsdemo.in/smapl/web_images/";
 export const ASSETS_BASE_URL = "https://sulitmetals.com/web_images/";
+export const PDF_BASE_URL = "https://sulitmetals.com/";
 
 export function getAssetUrl(path: string): string {
   if (!path) return "";

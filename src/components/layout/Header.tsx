@@ -37,24 +37,24 @@ const navLinks: NavItem[] = [
             label: "FACILITIES INCLUDING DETAILS",
             children: [
               {
-                to: "/pdf/layout N-1.pdf",
+                to: "https://sulitmetals.com/pdf/layout N-1.pdf",
                 label: "LAYOUT",
                 external: true,
               },
               {
-                to: "/pdf/MANCHINE LIST & PHOTOGRAPHS.pdf",
+                to: "https://sulitmetals.com/pdf/MANCHINE LIST & PHOTOGRAPHS.pdf",
                 label: "PLANT AND MACHINERY",
                 external: true,
               },
             ],
           },
           {
-            to: "/pdf/DETAILS OF RDSO.jpg.jpeg",
+            to: "https://sulitmetals.com/pdf/DETAILS OF RDSO.jpg.jpeg",
             label: "DETAILS OF RDSO APPROVAL",
             external: true,
           },
           {
-            to: "/pdf/Firm's Registration Details ( under the company act).pdf",
+            to: "https://sulitmetals.com/pdf/Firm's Registration Details ( under the company act).pdf",
             label: "FIRM REGISTRATION DETAILS",
             external: true,
           },
@@ -64,7 +64,7 @@ const navLinks: NavItem[] = [
             external: true,
           },
           {
-            to: "/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
+            to: "https://sulitmetals.com/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
             label: "ISO CERTIFICATION (BIS)",
             external: true,
           },
@@ -74,22 +74,22 @@ const navLinks: NavItem[] = [
             external: true,
           },
           {
-            to: "/pdf/Organization chart-smapl.pdf",
+            to: "https://sulitmetals.com/pdf/Organization chart-smapl.pdf",
             label: "ORGANISATION CHART",
             external: true,
           },
           {
-            to: "/pdf/Provision related to PAUT.pdf",
+            to: "https://sulitmetals.com/pdf/Provision related to PAUT.pdf",
             label: "DETAILS OF TESTING FACILITIES",
             external: true,
           },
           {
-            to: "/pdf/ARTISAN-INVOLED IN CUTTING DRILLING WELDING WITH MAN POWER DETAILES.pdf",
+            to: "https://sulitmetals.com/pdf/ARTISAN-INVOLED IN CUTTING DRILLING WELDING WITH MAN POWER DETAILES.pdf",
             label: "MANPOWER DETAILS",
             external: true,
           },
           {
-            to: "/pdf/POWER DEMAND & INSTALLED.pdf",
+            to: "https://sulitmetals.com/pdf/POWER DEMAND & INSTALLED.pdf",
             label: "POWER",
             external: true,
           },

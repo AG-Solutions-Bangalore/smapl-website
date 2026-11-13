@@ -114,7 +114,7 @@ const approvalsAndRegistrations = [
   {
     title: "Details of RDSO Approval Certificate",
     fileName: "DETAILS OF RDSO.jpg.jpeg",
-    path: "/pdf/DETAILS OF RDSO.jpg.jpeg",
+    path: "https://sulitmetals.com/pdf/DETAILS OF RDSO.jpg.jpeg",
     size: "118 KB",
     type: "Approval",
     details:
@@ -123,7 +123,7 @@ const approvalsAndRegistrations = [
   {
     title: "ISO Certification from BIS (Para 6.8 of STR)",
     fileName: "ISO Cetification from bis as per Para 6.8 of STR.pdf",
-    path: "/pdf/ISO Cetification from bis as per Para 6.8 of STR.pdf",
+    path: "https://sulitmetals.com/pdf/sulit_metals_alloys_private_limited_qms_ 20260510172_lic_doc.pdf",
     size: "3.6 MB",
     type: "Compliance",
     details:
@@ -133,7 +133,7 @@ const approvalsAndRegistrations = [
   {
     title: "Firm's Registration Details (Under Companies Act)",
     fileName: "Firm's Registration Details ( under the company act).pdf",
-    path: "/pdf/Firm's Registration Details ( under the company act).pdf",
+    path: "https://sulitmetals.com/pdf/Firm's Registration Details ( under the company act).pdf",
     size: "351 KB",
     type: "Registration",
     details:
@@ -200,28 +200,28 @@ const infrastructureAssets = {
     {
       title: "Machine List & Infrastructure Photographs",
       fileName: "MANCHINE LIST & PHOTOGRAPHS.pdf",
-      path: "/pdf/MANCHINE LIST & PHOTOGRAPHS.pdf",
+      path: "https://sulitmetals.com/pdf/MANCHINE LIST & PHOTOGRAPHS.pdf",
       size: "5.3 MB",
       actionLabel: "View Machinery & Photos",
     },
     {
       title: "Power Demand & Installed Capacity",
       fileName: "POWER DEMAND & INSTALLED.pdf",
-      path: "/pdf/POWER DEMAND & INSTALLED.pdf",
+      path: "https://sulitmetals.com/pdf/POWER DEMAND & INSTALLED.pdf",
       size: "2.7 MB",
       actionLabel: "View Power Capacity Doc",
     },
     {
       title: "Testing Facilities (Provision related to PAUT)",
       fileName: "Provision related to PAUT.pdf",
-      path: "/pdf/Provision related to PAUT.pdf",
+      path: "https://sulitmetals.com/pdf/Provision related to PAUT.pdf",
       size: "6.4 MB",
       actionLabel: "View PAUT Testing Facility",
     },
     {
       title: "Factory Layout Blueprint (Layout N-1)",
       fileName: "layout N-1.pdf",
-      path: "/pdf/layout N-1.pdf",
+      path: "https://sulitmetals.com/pdf/layout N-1.pdf",
       size: "204 KB",
       actionLabel: "View Factory Layout Plan",
     },
@@ -340,12 +340,29 @@ export default function RDSOPage() {
 
   useEffect(() => {
     const tabParam = searchParams.get("tab");
-    if (tabParam && ["approvals", "layout", "infrastructure", "artisans", "projects"].includes(tabParam)) {
+    if (
+      tabParam &&
+      [
+        "approvals",
+        "layout",
+        "infrastructure",
+        "artisans",
+        "projects",
+      ].includes(tabParam)
+    ) {
       setActiveTab(tabParam);
     }
     if (location.hash) {
       const id = location.hash.replace("#", "");
-      if (["approvals", "layout", "infrastructure", "artisans", "projects"].includes(id)) {
+      if (
+        [
+          "approvals",
+          "layout",
+          "infrastructure",
+          "artisans",
+          "projects",
+        ].includes(id)
+      ) {
         setActiveTab(id);
       }
       setTimeout(() => {
@@ -442,7 +459,10 @@ export default function RDSOPage() {
       </section>
 
       {/* Main Tabbed Portal Section */}
-      <section id="audit-files" className="max-w-7xl mx-auto px-6 py-16 scroll-mt-20">
+      <section
+        id="audit-files"
+        className="max-w-7xl mx-auto px-6 py-16 scroll-mt-20"
+      >
         <ScrollReveal
           direction="up"
           className="text-center max-w-3xl mx-auto mb-12"
@@ -467,8 +487,8 @@ export default function RDSOPage() {
             <button
               onClick={() => setActiveTab("approvals")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "approvals"
-                  ? "border-[#042D61] text-[#042D61]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-[#042D61] text-[#042D61]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
                 }`}
             >
               <FileCheck className="w-4 h-4" /> Approvals & Registrations
@@ -476,8 +496,8 @@ export default function RDSOPage() {
             <button
               onClick={() => setActiveTab("layout")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "layout"
-                  ? "border-[#042D61] text-[#042D61]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-[#042D61] text-[#042D61]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
                 }`}
             >
               <Building2 className="w-4 h-4" /> Layout (Plant Blueprint)
@@ -485,8 +505,8 @@ export default function RDSOPage() {
             <button
               onClick={() => setActiveTab("infrastructure")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "infrastructure"
-                  ? "border-[#042D61] text-[#042D61]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-[#042D61] text-[#042D61]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
                 }`}
             >
               <Settings className="w-4 h-4" /> Plant & Machinery
@@ -494,8 +514,8 @@ export default function RDSOPage() {
             <button
               onClick={() => setActiveTab("artisans")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "artisans"
-                  ? "border-[#042D61] text-[#042D61]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-[#042D61] text-[#042D61]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
                 }`}
             >
               <Users className="w-4 h-4" /> Welders & Artisans
@@ -503,8 +523,8 @@ export default function RDSOPage() {
             <button
               onClick={() => setActiveTab("projects")}
               className={`px-5 py-3.5 text-sm font-semibold border-b-2 transition-colors flex items-center gap-2 ${activeTab === "projects"
-                  ? "border-[#042D61] text-[#042D61]"
-                  : "border-transparent text-slate-500 hover:text-slate-900"
+                ? "border-[#042D61] text-[#042D61]"
+                : "border-transparent text-slate-500 hover:text-slate-900"
                 }`}
             >
               <History className="w-4 h-4" /> Executed & In-Hand Works
@@ -583,7 +603,8 @@ export default function RDSOPage() {
                         }
                       }}
                     >
-                      <Download className="w-3.5 h-3.5" /> {doc.download ? "View File" : "View File"}
+                      <Download className="w-3.5 h-3.5" />{" "}
+                      {doc.download ? "View File" : "View File"}
                     </a>
                   </Button>
                 </div>
@@ -600,10 +621,14 @@ export default function RDSOPage() {
               <div className="lg:col-span-8 space-y-6">
                 <div className="bg-white rounded-3xl p-8 border border-slate-200">
                   <h3 className="text-xl font-bold text-[#08182F] mb-4 flex items-center gap-2">
-                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication Shops & Operational Zones
+                    <Building2 className="w-5 h-5 text-[#C5A880]" /> Fabrication
+                    Shops & Operational Zones
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-6">
-                    Our manufacturing unit is architected with dedicated bays for raw material staging, CNC processing, automated sub-arc welding, shot blasting, and climate-controlled protective coatings.
+                    Our manufacturing unit is architected with dedicated bays
+                    for raw material staging, CNC processing, automated sub-arc
+                    welding, shot blasting, and climate-controlled protective
+                    coatings.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {infrastructureAssets.shops.map((shop) => (
@@ -630,7 +655,9 @@ export default function RDSOPage() {
                     <div className="w-12 h-12 rounded-xl bg-blue-50 text-[#042D61] flex items-center justify-center border border-blue-100">
                       <Building2 className="w-6 h-6" />
                     </div>
-                    <span className="text-slate-400 text-xs font-semibold">204 KB</span>
+                    <span className="text-slate-400 text-xs font-semibold">
+                      204 KB
+                    </span>
                   </div>
                   <div>
                     <span className="text-[10px] font-bold text-[#C5A880] uppercase tracking-wider block mb-1">
@@ -640,7 +667,9 @@ export default function RDSOPage() {
                       Factory Layout Plan (Layout N-1)
                     </h4>
                     <p className="text-slate-500 text-xs leading-relaxed mb-4">
-                      Complete architectural layout blueprint displaying material flows, CNC bay allocations, gantry crane spans, and component assembly zones.
+                      Complete architectural layout blueprint displaying
+                      material flows, CNC bay allocations, gantry crane spans,
+                      and component assembly zones.
                     </p>
                     <span className="text-[10px] font-mono text-slate-400 truncate block mb-4">
                       layout N-1.pdf
@@ -652,11 +681,12 @@ export default function RDSOPage() {
                     asChild
                   >
                     <a
-                      href={getAssetUrl("/pdf/layout N-1.pdf")}
+                      href={getAssetUrl("https://sulitmetals.com/pdf/layout N-1.pdf")}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <Download className="w-4 h-4" /> View Factory Layout Plan (PDF)
+                      <Download className="w-4 h-4" /> View Factory Layout Plan
+                      (PDF)
                     </a>
                   </Button>
                 </div>
@@ -689,10 +719,13 @@ export default function RDSOPage() {
 
                 <div className="bg-white rounded-3xl p-8 border border-slate-200">
                   <h3 className="text-xl font-bold text-[#08182F] mb-6 flex items-center gap-2">
-                    <Settings className="w-5 h-5 text-[#C5A880]" /> Plant & Machinery Capabilities
+                    <Settings className="w-5 h-5 text-[#C5A880]" /> Plant &
+                    Machinery Capabilities
                   </h3>
                   <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                    Equipped with high-capacity CNC plate drilling, multi-torch plasma profiling, automated submerged arc welding gantries, and NABL certified quality verification instruments.
+                    Equipped with high-capacity CNC plate drilling, multi-torch
+                    plasma profiling, automated submerged arc welding gantries,
+                    and NABL certified quality verification instruments.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
                     <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
@@ -786,11 +819,12 @@ export default function RDSOPage() {
                   asChild
                 >
                   <a
-                    href={getAssetUrl("/pdf/Organization chart-smapl.pdf")}
+                    href={getAssetUrl("https://sulitmetals.com/pdf/Organization chart-smapl.pdf")}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Download className="w-3.5 h-3.5" /> View Organisation Chart (PDF)
+                    <Download className="w-3.5 h-3.5" /> View Organisation Chart
+                    (PDF)
                   </a>
                 </Button>
                 <Button
@@ -799,11 +833,14 @@ export default function RDSOPage() {
                   asChild
                 >
                   <a
-                    href={getAssetUrl("/pdf/ARTISAN-INVOLED IN CUTTING DRILLING WELDING WITH MAN POWER DETAILES.pdf")}
+                    href={getAssetUrl(
+                      "https://sulitmetals.com/pdf/ARTISAN-INVOLED IN CUTTING DRILLING WELDING WITH MAN POWER DETAILES.pdf",
+                    )}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <Download className="w-3.5 h-3.5" /> View Manpower & Artisans Detailed Register (PDF)
+                    <Download className="w-3.5 h-3.5" /> View Manpower &
+                    Artisans Detailed Register (PDF)
                   </a>
                 </Button>
               </div>
@@ -920,7 +957,10 @@ export default function RDSOPage() {
       </section>
 
       {/* Directors Profile Section */}
-      <section id="directors" className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 scroll-mt-20">
+      <section
+        id="directors"
+        className="max-w-7xl mx-auto px-6 py-12 border-t border-slate-200 scroll-mt-20"
+      >
         <ScrollReveal
           direction="up"
           className="text-center max-w-3xl mx-auto mb-16"
@@ -1140,7 +1180,10 @@ export default function RDSOPage() {
       */}
 
       {/* Address & Contacts Section */}
-      <section id="address" className="bg-[#0B2545] text-white py-20 relative overflow-hidden scroll-mt-20">
+      <section
+        id="address"
+        className="bg-[#0B2545] text-white py-20 relative overflow-hidden scroll-mt-20"
+      >
         {/* Background Gradients */}
         <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:30px_30px]" />
         <div className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#C5A880]/10 blur-3xl" />
